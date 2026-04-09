@@ -1,0 +1,5714 @@
+[
+    {
+        "code": "ASU041",
+        "name": "Technical English Language",
+        "credit_hours": 0,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx11",
+        "name": "Societal Issues",
+        "credit_hours": 0,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx31",
+        "name": "Graduation Thesis",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx12",
+        "name": "Selected Topics in Contemporary Issues",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx13",
+        "name": "Climate Change, Energy and Water Issues",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx21",
+        "name": "History of Civilizations",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx22",
+        "name": "Literature and Arts",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx23",
+        "name": "Music Appreciation",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx24",
+        "name": "Egyptian Identity and Other Cultures",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx32",
+        "name": "Critical Thinking",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx42",
+        "name": "Innovation and Entrepreneurship",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx43",
+        "name": "Introduction to Marketing",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx44",
+        "name": "Introduction to Accounting",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx45",
+        "name": "Business Administration",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx46",
+        "name": "Legislations and Professional Ethics",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx47",
+        "name": "Professional Ethics",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx48",
+        "name": "Scientific Research",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ASUx41",
+        "name": "Report Writing and Communication Skills",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE141",
+        "name": "Introduction to Computer Programming",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM011",
+        "name": "Basic Mathematics",
+        "credit_hours": 0,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ENG2xx",
+        "name": "Field Training",
+        "credit_hours": 0,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM111",
+        "name": "Mathematics (1)",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "ASU041",
+            "PHM011"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM112",
+        "name": "Mathematics (2)",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "PHM111"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM113",
+        "name": "Probability and Statistics",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "PHM111"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM121",
+        "name": "Vibration and Waves",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "ASU041",
+            "PHM011"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM122",
+        "name": "Electricity and Magnetism",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "ASU041",
+            "PHM011"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM141",
+        "name": "Engineering Chemistry",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "ASU041"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM131",
+        "name": "Statics",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "ASU041",
+            "PHM011"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM132",
+        "name": "Dynamics",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "PHM131"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "DEP39x",
+        "name": "Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES111",
+        "name": "Fundamentals of Structural Mechanics (1)",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES112",
+        "name": "Fundamentals of Structural Mechanics (2)",
+        "credit_hours": 3,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP181",
+        "name": "Production Engineering",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [
+            "ASU041"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP182",
+        "name": "Manufacturing Processes",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC151",
+        "name": "Basics of Conventional Construction Systems",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE121",
+        "name": "Communication Systems Engineering Fundamentals",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES253",
+        "name": "Properties and Testing of Materials",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE142",
+        "name": "Introduction to Software Engineering",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP111",
+        "name": "Engineering Drawing",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC141",
+        "name": "Architectural Representation",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC143",
+        "name": "Building Engineering Drawing",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE381",
+        "name": "Image Processing",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEI231",
+        "name": "Civil Drawing",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM123",
+        "name": "Introduction to Physical Electronics",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM221",
+        "name": "Quantum Physics",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM112",
+            "PHM122"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP151",
+        "name": "Engineering Materials",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP251",
+        "name": "Structure and Properties of Materials",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM141"
+        ],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM113",
+        "name": "Properties of Electrical Materials",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES251",
+        "name": "Structures and Properties of Construction Materials",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES263",
+        "name": "Soil Mechanics and Properties of Construction Materials",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP461",
+        "name": "Materials for Energy Solution",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP483",
+        "name": "Lean Manufacturing System",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC111",
+        "name": "Fundamentals of Architecture Design",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC217",
+        "name": "Fundamentals of Architectural Engineering",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM456",
+        "name": "Renewable Resources Interfacing",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE441",
+        "name": "Antenna Engineering and Propagation",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE121",
+        "name": "Introduction to Logic Design",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEP111",
+        "name": "Projection and Engineering Graphics",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP333",
+        "name": "Industrial Project Management",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP432",
+        "name": "Engineering Economy",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP441",
+        "name": "Project Management and Engineering Economy",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEA432",
+        "name": "Project Management for Mechanical Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC371",
+        "name": "Architectural Projects Management and Economics",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL272",
+        "name": "Society and Housing Economics",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL471",
+        "name": "Urban Economics",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM111",
+        "name": "Engineering Economy and Investments",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM314",
+        "name": "Project Management for Electrical Engineering",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM315",
+        "name": "Projects Economy and Management",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE432",
+        "name": "Software Project Management",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES371",
+        "name": "Project Management Essentials in Construction",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEI324",
+        "name": "Engineering Economics and Management",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP112",
+        "name": "Principles of Computer Graphical Representation",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC131",
+        "name": "History of Arts and Architecture",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC142",
+        "name": "Fundamentals of Computer Graphics",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL121",
+        "name": "Community Participation in Development",
+        "credit_hours": 2,
+        "level": "Freshman",
+        "prerequisite_codes": [],
+        "category": "University Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM213",
+        "name": "Differential Equations and Numerical Analysis",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM112"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP211",
+        "name": "Machine Construction",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "MDP111"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP212",
+        "name": "Mechanics of Materials",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM131"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP213",
+        "name": "Mechanics of Machines",
+        "credit_hours": 4,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM132"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP311",
+        "name": "Machine Elements Design",
+        "credit_hours": 4,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MDP211",
+            "MDP212"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP312",
+        "name": "Mechanical Vibrations",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "PHM121",
+            "MDP213"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP252",
+        "name": "Metallurgy and Material Testing",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "MDP251"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP281",
+        "name": "Manufacturing Technology",
+        "credit_hours": 4,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "MDP181"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP211",
+        "name": "Thermal Physics",
+        "credit_hours": 4,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM112"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP212",
+        "name": "Fluid Mechanics",
+        "credit_hours": 4,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM213"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP311",
+        "name": "Heat Transfer",
+        "credit_hours": 4,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MEP211",
+            "MEP212"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MCT411",
+        "name": "Hydraulics and Pneumatics Control",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP212"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MCT331",
+        "name": "Mechatronic Systems Integration",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE232",
+            "MDP211"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM214",
+        "name": "Electrical Circuits and Machines",
+        "credit_hours": 4,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM122"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE212",
+        "name": "Introduction to Electronics",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "PHM122"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE232",
+        "name": "Fundamentals of Computer Programming",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "DEP491",
+        "name": "Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Faculty Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP351",
+        "name": "Casting and Welding",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP313",
+        "name": "Applied Thermodynamics",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MEP211"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEA311",
+        "name": "Automotive Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MCT441",
+        "name": "Design of Autonomous Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP331",
+        "name": "Automatic Control",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "PHM213"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MCT311",
+        "name": "Control Systems Design (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "PHM213",
+            "MDP312"
+        ],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MCT341",
+        "name": "Control and Automation",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP381",
+        "name": "Measuring Instruments and Metrology",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP332",
+        "name": "Measurements and Instrumentation",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MCT332",
+        "name": "Engineering Measurements and Sensors",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Mechanical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC211",
+        "name": "Principles of Architecture Design Studio",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CEP111"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC212",
+        "name": "Principles of Visual Design and Design Methods",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC213",
+        "name": "Creativity Design Studio",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "ARC212",
+            "CEP111"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC311",
+        "name": "Building Type and Legislations Design Studio",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ARC211"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC312",
+        "name": "Architectural Technology Design Studio",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ARC311"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC231",
+        "name": "History of Arts and Architecture (1): Ancient Civilizations",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC331",
+        "name": "History of Arts and Architecture (2): Islamic and Western Architecture",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC241",
+        "name": "Visual Communication in Architecture",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CEP111"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC242",
+        "name": "Modeling of The Built Environment",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "ARC241"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC251",
+        "name": "Building (1): Conventional Construction Systems",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CEP111"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC252",
+        "name": "Building (2): Finishing Works",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "ARC241"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC351",
+        "name": "Building (3): Advanced Construction and Working Drawing Standards",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ARC251"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC352",
+        "name": "Working Design (1): Systems Coordination and Building Information",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ARC351",
+            "MEP341"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC362",
+        "name": "Daylighting and Control of Thermal Environment",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL211",
+        "name": "Principles of Urban Design and Landscape",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL311",
+        "name": "Context and Place Design Studio",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL312",
+        "name": "Urban and Landscape Design Studio",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "UPL311"
+        ],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL321",
+        "name": "History and Theory of Urbanism",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEP213",
+        "name": "Surveying and Site Mobility",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES213",
+        "name": "Structural Analysis for Architects",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES315",
+        "name": "Concrete and Steel Structures",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MEP341",
+        "name": "Technical Installations",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL212",
+        "name": "Placemaking and Place Identity",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL271",
+        "name": "Human Behavior and the Built Environment",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL231",
+        "name": "Site Analysis",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL241",
+        "name": "Horticulture and Garden Design",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "UPL281",
+        "name": "Introduction to Geographic Information Systems",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC321",
+        "name": "Modern Art Movements",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC345",
+        "name": "Model Making and Digital Fabrication",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC341",
+        "name": "Photography and Architecture",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC342",
+        "name": "Data Modeling and Programming for Architects",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC343",
+        "name": "Media and Filmmaking for Architects",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ARC344",
+        "name": "Digital Graphics and Animation",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Architectural Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM224",
+        "name": "Physics of Semiconductors and Dielectrics",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM221"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM211",
+        "name": "Electric Circuits (1)",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM122"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM212",
+        "name": "Electromagnetic Fields",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM112",
+            "PHM122"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM213",
+        "name": "Electrical Measurements",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "EPM211"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM221",
+        "name": "Energy Conversion and Renewable Energy",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "EPM212"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE211",
+        "name": "Electronics",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "EPM211"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE251",
+        "name": "Signals and Systems Fundamentals",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM213"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE211",
+        "name": "Logic Design",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE231",
+        "name": "Computer Programming",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE271",
+        "name": "System Dynamics and Control Components",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM311",
+        "name": "Discrete Mathematics",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM312",
+        "name": "Complex Variables, Special Functions and Partial Differential Equations",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "PHM213"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM433",
+        "name": "Statistical Methods in Power System Planning",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM332",
+        "name": "Power Systems Analysis (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM331"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE352",
+        "name": "Analog and Digital Communication Systems",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ECE351"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE451",
+        "name": "Parallel and Distributed Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE351"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM311",
+        "name": "Electric Circuits (2)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM211"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE311",
+        "name": "Digital Circuits",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE211"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE413",
+        "name": "Digital Systems Testing and Verification",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE313",
+            "CSE331"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM371",
+        "name": "Automatic Control Systems Design",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE371",
+        "name": "Control Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE271",
+            "ECE251"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM331",
+        "name": "Electrical Power Transmission Systems",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM211"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE351",
+        "name": "Fundamentals of Communication Systems",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ECE251"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM333",
+        "name": "Electrical Distribution Networks",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM211"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "ECE353",
+        "name": "Telecommunication Networks",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ECE351"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE351",
+        "name": "Computer Networks",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM471",
+        "name": "Microcontroller Applications in Power Engineering",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE411",
+        "name": "Real-Time Embedded Systems Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE312"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "EPM472",
+        "name": "Industrial Automation Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CSE312",
+        "name": "Computer Organization",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE211",
+            "CSE231"
+        ],
+        "category": "Basic Electrical Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "PHM212",
+        "name": "Differential Equations for Civil Engineering",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM112"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES211",
+        "name": "Structural Mechanics (1)",
+        "credit_hours": 4,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM131"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES212",
+        "name": "Structural Mechanics (2)",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CES211"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES221",
+        "name": "Concrete Design (1)",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CES211"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES321",
+        "name": "Concrete Design (2)",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES221"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES323",
+        "name": "Design of Concrete Floors and Halls",
+        "credit_hours": 4,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES321"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES341",
+        "name": "Design and Behavior of Steel Structures (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES212"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES351",
+        "name": "Concrete Technology",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES252"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES252",
+        "name": "Materials Testing and Properties",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CES251"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES261",
+        "name": "Geology and Geotechnical Engineering (1)",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES361",
+        "name": "Geotechnical Engineering (2)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES261"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEP211",
+        "name": "Introduction to Plane Surveying",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEP212",
+        "name": "Introduction to Topographical Surveying",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CEP211"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEP221",
+        "name": "Highways and Transportation Engineering",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEI211",
+        "name": "Fluid Mechanics",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "PHM131"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEI212",
+        "name": "Hydraulics",
+        "credit_hours": 3,
+        "level": "Sophomore",
+        "prerequisite_codes": [
+            "CEI211"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEI241",
+        "name": "Engineering Hydrology",
+        "credit_hours": 2,
+        "level": "Sophomore",
+        "prerequisite_codes": [],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEP332",
+        "name": "Highways Construction Material and Pavement Design",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES362",
+        "name": "Foundation Engineering (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES361"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES365",
+        "name": "Foundation Engineering of Water Structures",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CES461",
+        "name": "Foundation Engineering (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES361"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEP351",
+        "name": "Water and Wastewater Networks",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "CEI321",
+        "name": "Irrigation and Drainage Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEI212",
+            "CEI241"
+        ],
+        "category": "Basic Civil Engineering Requirement",
+        "programs": []
+    },
+    {
+        "code": "MDP313",
+        "name": "Mechanical System Design",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MDP311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP331",
+        "name": "Operations Research",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP431",
+        "name": "Operations Management",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP435",
+        "name": "Work Study and Ergonomics",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP471",
+        "name": "Quality Control",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "PHM113"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP382",
+        "name": "Theory of Metal Forming and Cutting",
+        "credit_hours": 4,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MDP281"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP481",
+        "name": "Design of Tools and Production Facilities",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MDP382"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP484",
+        "name": "Materials Processing",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MDP281"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP488",
+        "name": "Metal Cutting Machines and Technology",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MDP281",
+            "MDP311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP492",
+        "name": "MDPE Graduation Project (3)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MDP491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP391",
+        "name": "MDPE Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MDP281"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP491",
+        "name": "MDPE Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MDP391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP314",
+        "name": "Product Design and Development",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP371",
+        "name": "Quality Systems and Assurance",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP411",
+        "name": "Introduction to Finite Elements",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE",
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MDP421",
+        "name": "Advanced Topics in CNC Machine Tools",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP433",
+        "name": "Maintenance Planning and Scheduling",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP437",
+        "name": "Modeling and Simulation of Industrial Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP472",
+        "name": "Lean Six Sigma",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP412",
+        "name": "Noise and Vibration Control",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP413",
+        "name": "Selected Topics in Mechanical Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP434",
+        "name": "Advanced Manufacturing Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP436",
+        "name": "Facilities Planning and Plant Layout",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MDP438",
+        "name": "Smart Manufacturing",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MDPE"
+        ]
+    },
+    {
+        "code": "MEP312",
+        "name": "Combustion",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MEP311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP411",
+        "name": "Thermal Power Plants",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP311",
+            "MEP313"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP412",
+        "name": "Internal Combustion Engines",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP312",
+            "MEP313"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP321",
+        "name": "Incompressible Flow Machines",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MEP212"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP421",
+        "name": "Sustainable Energy Systems and Technology",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP431",
+        "name": "Refrigeration",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP311",
+            "MEP313"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP432",
+        "name": "Compressible Flow Machines",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP212",
+            "MEP311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP433",
+        "name": "Air Conditioning",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP311",
+            "MEP313"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP434",
+        "name": "Digital and Process Control",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP321"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP435",
+        "name": "Fundamentals of Computational Thermofluids",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP492",
+        "name": "MEPE Graduation Project (3)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP391",
+        "name": "MEPE Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP491",
+        "name": "MEPE Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEP311",
+            "MEP391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP413",
+        "name": "Advances in Internal Combustion Engines",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP414",
+        "name": "Biomass Systems and Energy Storage",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP416",
+        "name": "Solar and Wind Energy Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP417",
+        "name": "Heat Engines",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP443",
+        "name": "Selected Topics in Mechanical Power Engineering (1)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP451",
+        "name": "Nuclear Energy",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP415",
+        "name": "Propulsion for Modern Transport Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP422",
+        "name": "Advanced Energy Conversion",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP423",
+        "name": "Water Desalination and Distillation",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP436",
+        "name": "Building Services Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP437",
+        "name": "Water Distribution Networks",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP442",
+        "name": "Environmental Impact Assessment",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEP444",
+        "name": "Selected Topics in Mechanical Power Engineering (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MEPE"
+        ]
+    },
+    {
+        "code": "MEA411",
+        "name": "Electric Vehicles Technology",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEA311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA412",
+        "name": "Road Vehicle Dynamics",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MDP312"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA321",
+        "name": "Vehicle Design and Simulation (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MDP311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA421",
+        "name": "Vehicle Design and Simulation (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEA321"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA431",
+        "name": "Automotive Maintenance Engineering",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEA341"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA433",
+        "name": "Automotive After Sales Services",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEA431"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA341",
+        "name": "Automotive Engines and Fuel Systems",
+        "credit_hours": 4,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MEP211"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA442",
+        "name": "Computer Aided Design of Automotive Engines",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MDP311",
+            "MEA341"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA451",
+        "name": "Automotive Mechatronic Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE232",
+            "MEA311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA452",
+        "name": "Vehicle Safety Systems and Accident Analysis",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEA321"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA492",
+        "name": "AUTO Graduation Project (3)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEA491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA391",
+        "name": "AUTO Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA491",
+        "name": "AUTO Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MEA391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA414",
+        "name": "Earth Moving Equipment and Commercial Vehicle Technology",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA415",
+        "name": "Race Car Technology",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA434",
+        "name": "Workshop Planning and Vehicle Repair Technologies",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "CSE311",
+        "name": "Logic Circuits",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "CSE412",
+        "name": "Embedded Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE232"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA413",
+        "name": "Aerodynamics of Road Vehicles",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA443",
+        "name": "Alternative Fuels and Emissions Control Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA444",
+        "name": "Powertrain Characterization and Automotive Testing Standards",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA453",
+        "name": "Automotive Control Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA461",
+        "name": "Vehicle Manufacturing and Assembly",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA416",
+        "name": "Motorcycle and Tricycle Technology",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MEA441",
+        "name": "Engine Management Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MCT453",
+        "name": "Embedded Systems for Automotive",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "AUTO"
+        ]
+    },
+    {
+        "code": "MCT413",
+        "name": "Control Systems Design (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MCT311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT412",
+        "name": "Industrial Automation and Networks",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT342",
+        "name": "Industrial Robotics",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MDP213"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT344",
+        "name": "Mechatronic Systems Design",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "MCT331"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "EPM454",
+        "name": "Power Electronics and Electrical Drives Systems",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "EPM214"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "ECE313",
+        "name": "Electronic for Instrumentations",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ECE212"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "CSE339",
+        "name": "Advanced Programming",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE232"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "CSE474",
+        "name": "Fundamentals of Computational Intelligence",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "PHM113"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "CSE475",
+        "name": "Machine Vision",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE251"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT493",
+        "name": "MCTR Graduation Project (3)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MCT492"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT391",
+        "name": "MCTR Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT491",
+        "name": "MCTR Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "MCT391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT442",
+        "name": "Advanced Robotics Analysis and Control",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT444",
+        "name": "Introduction to MEMS Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT451",
+        "name": "Autotronics",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT452",
+        "name": "Biomechatronics",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "MCT461",
+        "name": "Selected Topics in Mechatronic Engineering",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "CSE472",
+        "name": "Digital Image Processing",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE251"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "MCTR"
+        ]
+    },
+    {
+        "code": "ARC411",
+        "name": "Architecture and Dwelling Studio",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC412",
+        "name": "Thematic Design Studio",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC312"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC421",
+        "name": "Theory and Philosophy of Contemporary Architecture",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC331"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC422",
+        "name": "Human Aspects in Architecture",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC441",
+        "name": "Computational Design in Architecture",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC242"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC451",
+        "name": "Interior Design and Technical Drawings Studio",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC352"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC461",
+        "name": "Acoustics in Architecture",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "PHM121"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC491",
+        "name": "ARCH Graduation Project (2) AD & BT",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC492",
+        "name": "ARCH Graduation Project (3) AD & BT",
+        "credit_hours": 6,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC391",
+        "name": "ARCH Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC413",
+        "name": "Architectural Sustainable Rehabilitation Design Studio",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC312"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC431",
+        "name": "Principles of Residential Development",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC443",
+        "name": "Building Performance Simulation",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC242"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC452",
+        "name": "Working Design (2): Blow Ups Detailing and BOQs",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC352"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC453",
+        "name": "Advanced Technical Installation",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL411",
+        "name": "Urban Design Studio (3)",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "UPL312"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL432",
+        "name": "Urban and Architectural Heritage",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL441",
+        "name": "Theories and Approaches in Landscape Design",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL451",
+        "name": "Housing, Neighbourhood Design Studio",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "UPL321"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL462",
+        "name": "Contemporary Environmental Issues",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL491",
+        "name": "ARCH Graduation Project (2) UD",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL495",
+        "name": "ARCH Graduation Project (3) UD",
+        "credit_hours": 6,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "UPL491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL422",
+        "name": "City Governance and Land Management",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "UPL431"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL431",
+        "name": "Town Planning Studio",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL433",
+        "name": "Urban Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL481",
+        "name": "Urban Informatics",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL492",
+        "name": "ARCH Graduation Project (2) UP",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ARC391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL496",
+        "name": "ARCH Graduation Project (3) UP",
+        "credit_hours": 6,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "UPL492"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC423",
+        "name": "Architecture and Environmental Psychology",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC424",
+        "name": "Architectural Criticism and Project Evaluation",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC425",
+        "name": "Identity and Contemporaneity in Egyptian Architecture",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC426",
+        "name": "Built Environment Accessibility",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC432",
+        "name": "Architectural Heritage",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC454",
+        "name": "Earth Construction",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC462",
+        "name": "Sustainable Building Rating Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC463",
+        "name": "Renewable Energy and Buildings",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC471",
+        "name": "Facilities Management",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC472",
+        "name": "Building Life Cycle Assessment",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "ARC467",
+        "name": "Design for Climate Change",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL461",
+        "name": "Environmental Impact Assessment",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL412",
+        "name": "The Past, Present and Future Urban Space",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL415",
+        "name": "Selected Topics in Urban Space Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL472",
+        "name": "Urban Sociology and Human Settlements",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL482",
+        "name": "Introduction to Geo Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL421",
+        "name": "Introduction to Regional Planning",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL424",
+        "name": "Selected Topics in Urban Planning and Development",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL434",
+        "name": "Urban Upgrading for Inclusion, Sustainability and Resilience",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL473",
+        "name": "Equity and Urban Justice",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL423",
+        "name": "Participatory Planning and Communities",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL425",
+        "name": "Selected Topics in Urbanization Issues",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "UPL452",
+        "name": "Housing Studies and Real Estate Development",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ARCH"
+        ]
+    },
+    {
+        "code": "EPM321",
+        "name": "Electrical Machines (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM212"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM322",
+        "name": "Electrical Machines (2)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM321"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM431",
+        "name": "Operation and Control of Power Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "EPM332"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM432",
+        "name": "Electrical Energy Utilization",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM434",
+        "name": "Power Systems Analysis (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "EPM332"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM341",
+        "name": "High Voltage Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM342",
+        "name": "Switchgear and Substation Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM341"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM351",
+        "name": "Power Electronics (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM352",
+        "name": "Power Electronics (2)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "EPM351"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM451",
+        "name": "Electrical Drives",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "EPM322",
+            "EPM352"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM461",
+        "name": "Power Systems Protection",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "EPM213"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM463",
+        "name": "Digital Protection",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "EPM461"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM492",
+        "name": "EPME Graduation Project (3)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "EPM491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM391",
+        "name": "EPME Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM491",
+        "name": "EPME Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM421",
+        "name": "Generalized Theory of Electrical Machines",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM422",
+        "name": "Power Generating Stations",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM423",
+        "name": "Design of Electrical Machines",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM424",
+        "name": "Special Electrical Machines",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM435",
+        "name": "Computer Applications in Power Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM441",
+        "name": "High Voltage Applications",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM452",
+        "name": "Advanced Power Electronics",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM453",
+        "name": "Power Quality",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "EPM473",
+        "name": "Energy Management Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "EPME"
+        ]
+    },
+    {
+        "code": "ECE312",
+        "name": "Analog Circuits (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ECE211"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE314",
+        "name": "Advanced Semiconductor Devices",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "PHM224"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE411",
+        "name": "Analog Circuits (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE211"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE331",
+        "name": "Fundamentals of Electromagnetics",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "PHM213",
+            "EPM212"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE332",
+        "name": "Waveguide Theory",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ECE331"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE333",
+        "name": "Optoelectronics",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "PHM224"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE431",
+        "name": "Microwave Circuits",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE332"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE432",
+        "name": "Antenna Theory",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE332"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE354",
+        "name": "Digital Signal Processing Basics",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "ECE251"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE451",
+        "name": "Wireless Communication Networks",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE352"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE493",
+        "name": "ELCE Graduation Project (3)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE391",
+        "name": "ELCE Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE491",
+        "name": "ELCE Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "ECE391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE412",
+        "name": "VLSI Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE413",
+        "name": "Radio Frequency Circuits and Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE414",
+        "name": "Electronic Instrumentation",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE415",
+        "name": "Selected Topics in Electronics Engineering",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE416",
+        "name": "CMOS Analog Integrated Circuits",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE417",
+        "name": "Integrated Circuits Technology",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE418",
+        "name": "ASIC Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE419",
+        "name": "MEMS Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE433",
+        "name": "Optical Communication Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE434",
+        "name": "Fundamentals of Photonics",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE435",
+        "name": "Optical MEMS",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE436",
+        "name": "Selected Topics in Electromagnetics",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE452",
+        "name": "Information Theory",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE453",
+        "name": "Satellite Communication Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE454",
+        "name": "Selected Topics in Communication Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "ECE455",
+        "name": "Selected Topics in Telecommunication Networks",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "ELCE"
+        ]
+    },
+    {
+        "code": "CSE313",
+        "name": "Computer Architecture",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE312"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE331",
+        "name": "Advanced Computer Programming",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE231"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE332",
+        "name": "Software Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE231"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE333",
+        "name": "Data Structures and Algorithms",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE331"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE334",
+        "name": "Database Systems",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE331"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE335",
+        "name": "Operating Systems",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CSE312"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE431",
+        "name": "Design and Analysis of Algorithms",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE333"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE452",
+        "name": "Computer and Network Security",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE351"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE471",
+        "name": "Artificial Intelligence",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "PHM311",
+            "CSE231"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE492",
+        "name": "CSYE Graduation Project (3)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE391",
+        "name": "CSYE Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE491",
+        "name": "CSYE Graduation Project (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CSE391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE314",
+        "name": "Fault-Tolerant Digital Systems",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE414",
+        "name": "Real-Time Operating Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE415",
+        "name": "High-Performance Architectures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE416",
+        "name": "Electronic Design Automation",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE417",
+        "name": "Hardware Security",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE418",
+        "name": "Quantum Computing and Security",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE419",
+        "name": "Selected Topics in Computer Design",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "ECE315",
+        "name": "Digital Systems Design",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE336",
+        "name": "Software Design Patterns",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE337",
+        "name": "Software Testing",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE338",
+        "name": "Agile Software Engineering",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE433",
+        "name": "Compilers",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE434",
+        "name": "Advanced Database Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE435",
+        "name": "Internet Programming",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE436",
+        "name": "Mobile Programming",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE437",
+        "name": "Selected Topics in Computer Software",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE453",
+        "name": "Cloud Computing",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE454",
+        "name": "Digital Forensics",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE455",
+        "name": "Pervasive Computing and Internet of Things",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE456",
+        "name": "Wireless Networks",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE457",
+        "name": "Network Operations and Management",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE458",
+        "name": "Selected Topics in Computer Networks and Security",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE372",
+        "name": "Digital Control Systems",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE373",
+        "name": "Robotics Engineering",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE374",
+        "name": "Machine Learning and Pattern Recognition",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE473",
+        "name": "Fundamentals of Deep Learning",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE476",
+        "name": "Business Intelligence and Big-Data Analytics",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE477",
+        "name": "Fundamentals of Natural Language Processing",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE478",
+        "name": "Biomedical Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CSE479",
+        "name": "Selected Topics in Systems and Artificial Intelligence",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "CSYE"
+        ]
+    },
+    {
+        "code": "CES311",
+        "name": "Structural Analysis (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES212"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES312",
+        "name": "Structural Analysis (2)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES311"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES411",
+        "name": "Structural Analysis (3)",
+        "credit_hours": 4,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES312"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES421",
+        "name": "Design of Prestressed-Concrete and Concrete Bridges",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES323"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES422",
+        "name": "Special Topics in Concrete Design",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES323"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES342",
+        "name": "Design and Behavior of Steel Structures (2)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES341"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES441",
+        "name": "Integrated Design of Steel Bridges",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES342"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES442",
+        "name": "Advanced Design of Steel Bridges",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES441"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES352",
+        "name": "Strengthening and Repair of Structures",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES351"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES471",
+        "name": "Construction Project Management",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CEI435",
+        "name": "Design of Hydraulic Structures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES261",
+            "CEI212"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES492",
+        "name": "STRE Graduation Project (3)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES411",
+            "CES441",
+            "CES491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES391",
+        "name": "STRE Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CES323"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES491",
+        "name": "STRE Graduation Project (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES323",
+            "CES342",
+            "CES362",
+            "CES391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES472",
+        "name": "Project Risk and Safety Management",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES473",
+        "name": "Construction Contracts and Cost Estimation",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES423",
+        "name": "Masonry Structures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES427",
+        "name": "Construction Techniques of Concrete Structures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES444",
+        "name": "Construction of Steel Structures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES451",
+        "name": "Advanced Composite Materials",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES452",
+        "name": "Special Types of Concrete",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES453",
+        "name": "Sustainability of Construction and Building Physics",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES412",
+        "name": "Computer Aided Structural Design",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES413",
+        "name": "Earthquake Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES414",
+        "name": "Finite Element Method",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES415",
+        "name": "Dynamic Floor Vibrations",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES424",
+        "name": "Design of Concrete Bridges",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES443",
+        "name": "Behaviour of Steel Structures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES431",
+        "name": "Design of Structural Concrete using Strut and Tie Method",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES445",
+        "name": "Steel Plated Structures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES462",
+        "name": "Ground Improvement",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CES474",
+        "name": "Management of Project Resources",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "STRE"
+        ]
+    },
+    {
+        "code": "CEI411",
+        "name": "Network Hydraulics",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEI212"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI331",
+        "name": "Design of Irrigation Works",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEI321",
+            "CES261"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI432",
+        "name": "Hydraulic Structures (1)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEI231",
+            "CEI331"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI433",
+        "name": "Hydraulic Structures (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEI432"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI341",
+        "name": "Environmental Hydrology",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEI212",
+            "CEI241"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI441",
+        "name": "Groundwater Hydrology",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEI341"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI451",
+        "name": "Water Resources Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI461",
+        "name": "Coastal Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI462",
+        "name": "Port Engineering and Navigation",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEI461"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEP451",
+        "name": "Water and Wastewater Treatment",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "PHM141",
+            "CEI241"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI492",
+        "name": "WENG Graduation Project (3)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEI491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI391",
+        "name": "WENG Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI491",
+        "name": "WENG Graduation Project (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEI391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI312",
+        "name": "Environmental Hydraulics",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI353",
+        "name": "Water Quality",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI352",
+        "name": "Climate Change Adaptation in Water Resources Field",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI311",
+        "name": "Pump Stations Hydraulics",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI354",
+        "name": "Lab and Field Measurements in Water Resources Field",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI322",
+        "name": "Advanced Irrigation Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI351",
+        "name": "Geographical Information Systems in Water Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI431",
+        "name": "Dams Engineering",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI463",
+        "name": "Coastal Environment Engineering",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI421",
+        "name": "Sustainable Drainage Systems",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI412",
+        "name": "River Engineering",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI434",
+        "name": "Hydraulic Structures (3)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI464",
+        "name": "Environmental Impact Assessment for Water Engineering Projects",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEI452",
+        "name": "Non-Conventional Water Resources",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "WENG"
+        ]
+    },
+    {
+        "code": "CEP311",
+        "name": "Advanced Plane Surveying",
+        "credit_hours": 2,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEP211"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP312",
+        "name": "Engineering Surveying",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEP211"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP411",
+        "name": "Geodetic Surveying",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP321",
+        "name": "Transportation Planning",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEP221"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP322",
+        "name": "Traffic Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEP221"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP331",
+        "name": "Highways and Airport Engineering",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEP221"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP341",
+        "name": "Railway Engineering (1)",
+        "credit_hours": 3,
+        "level": "Junior",
+        "prerequisite_codes": [
+            "CEP221"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CES463",
+        "name": "Geotechnical Engineering for Infrastructures",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CES361"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP431",
+        "name": "Highway Construction Technology",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEP331"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP492",
+        "name": "UINE Graduation Project (3)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEP491"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP391",
+        "name": "UINE Graduation Project (1)",
+        "credit_hours": 1,
+        "level": "Junior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP491",
+        "name": "UINE Graduation Project (2)",
+        "credit_hours": 3,
+        "level": "Senior",
+        "prerequisite_codes": [
+            "CEP391"
+        ],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP412",
+        "name": "Geographic Information Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP432",
+        "name": "Selected Topics in Highways and Airports Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP441",
+        "name": "Railway Engineering (2)",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP452",
+        "name": "Environmental Engineering",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP414",
+        "name": "Hydrographic Surveying",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP421",
+        "name": "Traffic Management Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP435",
+        "name": "Road and Airport Maintenance",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP453",
+        "name": "Sludge Management",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEI453",
+        "name": "Hydraulic Modeling Analysis",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP413",
+        "name": "Advanced Topographic Surveying",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP422",
+        "name": "Traffic Studies and Analysis",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP442",
+        "name": "Railway Signaling Systems",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    },
+    {
+        "code": "CEP454",
+        "name": "Solid Waste Management",
+        "credit_hours": 2,
+        "level": "Senior",
+        "prerequisite_codes": [],
+        "category": "Program-Specific Requirement",
+        "programs": [
+            "UINE"
+        ]
+    }
+]

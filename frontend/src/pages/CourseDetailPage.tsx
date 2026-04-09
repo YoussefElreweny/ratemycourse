@@ -165,18 +165,17 @@ export default function CourseDetailPage() {
         <div className="md:col-span-2 space-y-8">
           <section className="bg-white p-8 rounded-3xl border border-zinc-200 shadow-sm">
             <h2 className="text-xl font-bold text-zinc-900 mb-6">Course Overview</h2>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="p-4 bg-zinc-50 rounded-2xl">
-                <div className="text-zinc-500 text-xs font-bold uppercase mb-1">Avg. Difficulty</div>
+                <div className="text-zinc-500 text-[10px] font-bold uppercase mb-1">Easiness</div>
                 <div className="text-2xl font-bold text-zinc-900">
                   {course.professors.length > 0 && course.professors.some(p => p.avg_difficulty !== null)
-                    ? (course.professors.reduce((acc, p) => acc + (p.avg_difficulty || 0), 0) / course.professors.filter(p => p.avg_difficulty !== null).length).toFixed(1)
+                    ? (6 - (course.professors.reduce((acc, p) => acc + (p.avg_difficulty || 0), 0) / course.professors.filter(p => p.avg_difficulty !== null).length)).toFixed(1)
                     : "N/A"}
                 </div>
-                <div className="text-[10px] text-zinc-400 mt-1">1 easy • 5 hard</div>
               </div>
-              <div className="p-4 bg-zinc-50 rounded-2xl">
-                <div className="text-zinc-500 text-xs font-bold uppercase mb-1">Recommendation</div>
+              <div className="p-4 bg-zinc-50 rounded-2xl col-span-2 lg:col-span-2">
+                <div className="text-zinc-500 text-[10px] font-bold uppercase mb-1">Recommend</div>
                 <div className="text-2xl font-bold text-zinc-900">
                   {course.professors.length > 0 && course.professors.some(p => p.recommend_percent !== null)
                     ? (course.professors.reduce((acc, p) => acc + (p.recommend_percent || 0), 0) / course.professors.filter(p => p.recommend_percent !== null).length).toFixed(0) + "%"
@@ -210,7 +209,7 @@ export default function CourseDetailPage() {
                           {review.user_name}
                         </div>
                         <div className="text-[10px] text-zinc-400 font-medium uppercase tracking-wider">
-                          {new Date(review.created_at).toLocaleDateString()}
+                          {review.term} • {new Date(review.created_at).toLocaleDateString()}
                         </div>
                       </div>
                     </div>
@@ -221,20 +220,12 @@ export default function CourseDetailPage() {
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
                     <div className="text-center p-3 bg-zinc-50 rounded-2xl">
-                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Diff</div>
-                      <div className="font-bold text-zinc-900">{review.difficulty}/5</div>
+                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Easiness</div>
+                      <div className="font-bold text-zinc-900">{6 - review.difficulty}/5</div>
                     </div>
-                    <div className="text-center p-3 bg-zinc-50 rounded-2xl">
-                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Work</div>
+                    <div className="text-center p-3 bg-zinc-50 rounded-2xl col-span-1">
+                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Workload</div>
                       <div className="font-bold text-zinc-900">{review.workload}/5</div>
-                    </div>
-                    <div className="text-center p-3 bg-zinc-50 rounded-2xl">
-                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Exam</div>
-                      <div className="font-bold text-zinc-900">{review.exam_difficulty}/5</div>
-                    </div>
-                    <div className="text-center p-3 bg-zinc-50 rounded-2xl">
-                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Fair</div>
-                      <div className="font-bold text-zinc-900">{review.grading_fairness}/5</div>
                     </div>
                   </div>
 

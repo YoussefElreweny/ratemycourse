@@ -96,6 +96,7 @@ CREATE TABLE reviews (
     recommend BOOLEAN,
     advice TEXT,
     professor_feedback TEXT,
+    term TEXT CHECK (term IN ('Fall', 'Spring', 'Summer')),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 

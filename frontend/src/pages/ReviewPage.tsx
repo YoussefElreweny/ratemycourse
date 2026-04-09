@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Search, BookOpen, ChevronRight, Star, GraduationCap } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Search, BookOpen, ChevronRight, Star, GraduationCap, Filter } from "lucide-react";
 import { motion } from "motion/react";
 import { supabase } from "../lib/supabase";
 
@@ -33,6 +33,7 @@ interface Course {
 }
 
 export default function ReviewPage() {
+  const navigate = useNavigate();
   const [universities, setUniversities] = useState<University[]>([]);
   const [selectedUni, setSelectedUni] = useState<number | null>(null);
   const [faculties, setFaculties] = useState<Faculty[]>([]);
@@ -50,43 +51,40 @@ export default function ReviewPage() {
     { id: 3, name: "Senior" },
   ];
 
+  // Boot: load all faculties directly, pick Engineering or first available
   useEffect(() => {
-    supabase.from("universities").select("*").then(({ data: unis }) => {
-      if (unis) {
-        setUniversities(unis);
-        const ainShams = unis.find((u: any) => u.name.includes("Ain Shams"));
-        if (ainShams) setSelectedUni(ainShams.id);
+    const boot = async () => {
+      // Load universities (for reference, not gating)
+      const { data: unis } = await supabase.from("universities").select("*");
+      if (unis && unis.length > 0) setUniversities(unis);
+
+      // Load faculties directly (don't depend on university being selected first)
+      const { data: facs } = await supabase.from("faculties").select("*");
+      if (facs && facs.length > 0) {
+        setFaculties(facs);
+        const eng = facs.find((f: any) => f.name.toLowerCase().includes("engineering"));
+        const chosen = eng || facs[0];
+        setSelectedUni(chosen.university_id || null);
+        setSelectedFaculty(chosen.id);
       }
-    });
+    };
+    boot();
   }, []);
 
-  useEffect(() => {
-    if (selectedUni) {
-      supabase.from("faculties").select("*").eq("university_id", selectedUni).then(({ data: facs }) => {
-        if (facs) {
-          setFaculties(facs);
-          const eng = facs.find((f: any) => f.name.includes("Engineering"));
-          if (eng) setSelectedFaculty(eng.id);
-        }
-      });
-      setSelectedDept(null);
-      setCourses([]);
-    }
-  }, [selectedUni]);
 
   const processCourseData = (rawData: any[], facultyNameFallback?: string): Course[] => {
     const uniqueMap = new Map<number, Course>();
 
     rawData.forEach((pc: any) => {
-      const c = pc.course || pc; // fallback in case direct course
+      const c = pc.course || pc;
       if (!c || uniqueMap.has(c.id)) return;
 
       const reviewCount = c.reviews?.length || 0;
       const avgDiff = reviewCount > 0 ? (c.reviews.reduce((acc: number, r: any) => acc + r.difficulty, 0) / reviewCount) : null;
+      
       const recCount = c.reviews?.filter((r: any) => r.recommend).length || 0;
       const recPercent = reviewCount > 0 ? (recCount / reviewCount) * 100 : null;
 
-      // Derived level from semester if it's a bridge object
       let derivedLevel = 0;
       if (pc.semester !== undefined) {
         derivedLevel = Math.floor((pc.semester - 1) / 2);
@@ -110,42 +108,100 @@ export default function ReviewPage() {
   };
 
   useEffect(() => {
-    if (selectedFaculty) {
-      supabase.from("departments").select("*").eq("faculty_id", selectedFaculty).then(({ data }) => {
-        if (data) setDepartments(data);
-      });
+    if (!selectedFaculty) return;
 
-      const facultyName = faculties.find(f => f.id === selectedFaculty)?.name;
-      supabase
+    const loadCoursesForFaculty = async () => {
+      // Step 1: Get departments for this faculty
+      const { data: depts, error: deptErr } = await supabase
+        .from("departments")
+        .select("*")
+        .eq("faculty_id", selectedFaculty);
+
+      if (deptErr) { console.error("Dept fetch error:", deptErr); return; }
+      if (!depts || depts.length === 0) { console.warn("No departments found for faculty", selectedFaculty); return; }
+
+      setDepartments(depts);
+      const deptIds = depts.map((d: any) => d.id);
+
+      // Step 2: Get program_courses filtered by those department IDs
+      const { data, error } = await supabase
         .from("program_courses")
         .select(`
-          semester, 
-          departments!inner(name, faculty_id), 
+          semester,
+          program_id,
           course:courses(*, reviews(id, difficulty, recommend))
         `)
-        .eq("departments.faculty_id", selectedFaculty)
-        .then(({ data }) => {
-          if (data) setCourses(processCourseData(data, facultyName));
+        .in("program_id", deptIds);
+
+      if (error) { console.error("Program courses fetch error:", error); return; }
+      if (!data) return;
+
+      // Map department name onto each record
+      const deptMap = Object.fromEntries(depts.map((d: any) => [d.id, d.name]));
+      const facultyName = faculties.find(f => f.id === selectedFaculty)?.name || "";
+
+      const uniqueMap = new Map<number, any>();
+      data.forEach((pc: any) => {
+        const c = pc.course;
+        if (!c || uniqueMap.has(c.id)) return;
+        const revs = c.reviews || [];
+        const count = revs.length;
+        const avgDiff = count > 0 ? revs.reduce((a: number, r: any) => a + r.difficulty, 0) / count : null;
+        const recPct = count > 0 ? (revs.filter((r: any) => r.recommend).length / count) * 100 : null;
+        uniqueMap.set(c.id, {
+          id: c.id,
+          code: c.code,
+          name: c.name,
+          credit_hours: c.credit_hours,
+          level: Math.floor(((pc.semester || 1) - 1) / 2),
+          department_name: deptMap[pc.program_id] || "General",
+          faculty_name: facultyName,
+          avg_difficulty: avgDiff,
+          recommend_percent: recPct,
+          review_count: count,
         });
-      setSelectedDept(null);
-    }
+      });
+
+      setCourses(Array.from(uniqueMap.values()));
+    };
+
+    setSelectedDept(null);
+    loadCoursesForFaculty();
   }, [selectedFaculty]);
 
   useEffect(() => {
-    if (selectedDept) {
-      supabase
+    if (!selectedDept) return;
+    const loadCoursesForDept = async () => {
+      const { data, error } = await supabase
         .from("program_courses")
-        .select(`
-          semester, 
-          departments!inner(name, faculties(name)), 
-          course:courses(*, reviews(id, difficulty, recommend))
-        `)
-        .eq("program_id", selectedDept)
-        .then(({ data }) => {
-          if (data) setCourses(processCourseData(data));
+        .select(`semester, program_id, course:courses(*, reviews(id, difficulty, recommend))`)
+        .eq("program_id", selectedDept);
+
+      if (error) { console.error("Dept courses error:", error); return; }
+      if (!data) return;
+
+      const deptName = departments.find(d => d.id === selectedDept)?.name || "";
+      const uniqueMap = new Map<number, any>();
+      data.forEach((pc: any) => {
+        const c = pc.course;
+        if (!c || uniqueMap.has(c.id)) return;
+        const revs = c.reviews || [];
+        const count = revs.length;
+        const avgDiff = count > 0 ? revs.reduce((a: number, r: any) => a + r.difficulty, 0) / count : null;
+        const recPct = count > 0 ? (revs.filter((r: any) => r.recommend).length / count) * 100 : null;
+        uniqueMap.set(c.id, {
+          id: c.id, code: c.code, name: c.name, credit_hours: c.credit_hours,
+          level: Math.floor(((pc.semester || 1) - 1) / 2),
+          department_name: deptName,
+          faculty_name: "",
+          avg_difficulty: avgDiff, recommend_percent: recPct, review_count: count,
         });
-    }
+      });
+      setCourses(Array.from(uniqueMap.values()));
+    };
+    loadCoursesForDept();
   }, [selectedDept]);
+
 
   const filteredCourses = courses.filter(c => {
     const matchesSearch = c.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -154,148 +210,126 @@ export default function ReviewPage() {
     return matchesSearch && matchesLevel;
   });
 
+  const getRatingColor = (val: number | null) => {
+    if (val === null) return "bg-zinc-100 text-zinc-400";
+    if (val >= 4) return "bg-emerald-500 text-white";
+    if (val >= 3) return "bg-emerald-400 text-white";
+    if (val >= 2.5) return "bg-yellow-400 text-white";
+    if (val >= 2) return "bg-orange-500 text-white";
+    return "bg-red-500 text-white";
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold text-zinc-900 mb-4">Course Reviews</h1>
-        <p className="text-zinc-500 text-lg">Exploring courses at Ain Shams University.</p>
+      <div className="text-center mb-16">
+        <h1 className="text-5xl font-extrabold text-zinc-900 mb-4 tracking-tight">Course Reviews & Ratings</h1>
+        <p className="text-zinc-500 text-xl font-medium tracking-wide italic">Explore experiences from students across all programs.</p>
       </div>
 
-      <div className="grid lg:grid-cols-4 gap-8">
-        {/* Sidebar Selectors */}
-          <div className="space-y-6">
-            {selectedFaculty && (
-              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-bold text-zinc-700 mb-3 uppercase tracking-widest">Department</label>
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => setSelectedDept(null)}
-                      className={`w-full text-left px-4 py-3 rounded-xl border transition-all text-sm ${
-                        selectedDept === null 
-                        ? "bg-emerald-50 border-emerald-500 text-emerald-700 font-bold" 
-                        : "bg-white border-zinc-200 text-zinc-600 hover:border-zinc-300"
-                      }`}
-                    >
-                      All Departments
-                    </button>
-                    {departments.map(dept => (
-                      <button
-                        key={dept.id}
-                        onClick={() => setSelectedDept(dept.id)}
-                        className={`w-full text-left px-4 py-3 rounded-xl border transition-all text-sm ${
-                          selectedDept === dept.id 
-                          ? "bg-emerald-50 border-emerald-500 text-emerald-700 font-bold" 
-                          : "bg-white border-zinc-200 text-zinc-600 hover:border-zinc-300"
-                        }`}
-                      >
-                        {dept.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-bold text-zinc-700 mb-3 uppercase tracking-widest">Level</label>
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => setSelectedLevel(null)}
-                      className={`w-full text-left px-4 py-3 rounded-xl border transition-all text-sm ${
-                        selectedLevel === null 
-                        ? "bg-emerald-50 border-emerald-500 text-emerald-700 font-bold" 
-                        : "bg-white border-zinc-200 text-zinc-600 hover:border-zinc-300"
-                      }`}
-                    >
-                      All Levels
-                    </button>
-                    {levels.map(level => (
-                      <button
-                        key={level.id}
-                        onClick={() => setSelectedLevel(level.id)}
-                        className={`w-full text-left px-4 py-3 rounded-xl border transition-all text-sm ${
-                          selectedLevel === level.id 
-                          ? "bg-emerald-50 border-emerald-500 text-emerald-700 font-bold" 
-                          : "bg-white border-zinc-200 text-zinc-600 hover:border-zinc-300"
-                        }`}
-                      >
-                        {level.name}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            )}
+      {/* Top Filter Bar */}
+      <div className="bg-white rounded-3xl p-4 shadow-xl shadow-zinc-200/50 border border-zinc-100 mb-12">
+        <div className="grid md:grid-cols-4 gap-4">
+          <div className="relative md:col-span-2">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
+            <input
+              type="text"
+              placeholder="Search by code or name..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all font-medium"
+            />
+          </div>
+          
+          <div className="relative">
+            <Filter className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={16} />
+            <select 
+              value={selectedDept || ""}
+              onChange={(e) => setSelectedDept(e.target.value ? parseInt(e.target.value) : null)}
+              className="w-full pl-10 pr-4 py-3 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none appearance-none font-medium text-zinc-600"
+            >
+              <option value="">All Departments</option>
+              {departments.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+            </select>
           </div>
 
-        {/* Course List */}
-        <div className="lg:col-span-3">
-          {selectedFaculty ? (
-            <div className="space-y-6">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={20} />
-                <input
-                  type="text"
-                  placeholder={`Search courses in ${faculties.find(f => f.id === selectedFaculty)?.name}...`}
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-white border border-zinc-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all shadow-sm"
-                />
-              </div>
+          <div className="relative">
+            <Filter className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={16} />
+            <select 
+              value={selectedLevel !== null ? selectedLevel : ""}
+              onChange={(e) => setSelectedLevel(e.target.value !== "" ? parseInt(e.target.value) : null)}
+              className="w-full pl-10 pr-4 py-3 bg-zinc-50 border border-zinc-100 rounded-2xl focus:outline-none appearance-none font-medium text-zinc-600"
+            >
+              <option value="">All Levels</option>
+              {levels.map(l => <option key={l.id} value={l.id}>{l.name}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                {filteredCourses.map(course => (
-                  <Link
-                    key={course.id}
-                    to={`/course/${course.id}`}
-                    className="p-6 bg-white border border-zinc-200 rounded-2xl hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/5 transition-all group"
+      {/* Course Table */}
+      <div className="bg-white rounded-3xl shadow-xl shadow-zinc-200/50 border border-zinc-100 overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="border-b border-zinc-100 bg-zinc-50/50">
+                <th className="px-6 py-5 text-sm font-bold text-zinc-500 uppercase tracking-widest">Code</th>
+                <th className="px-6 py-5 text-sm font-bold text-zinc-500 uppercase tracking-widest">Name</th>
+                <th className="px-6 py-5 text-sm font-bold text-zinc-500 uppercase tracking-widest text-center">Difficulty</th>
+                <th className="px-6 py-5 text-sm font-bold text-zinc-500 uppercase tracking-widest text-center">Recommend</th>
+                <th className="px-6 py-5 text-sm font-bold text-zinc-500 uppercase tracking-widest text-center">Reviews</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-50">
+              {filteredCourses.map(course => {
+                return (
+                  <tr 
+                    key={course.id} 
+                    onClick={() => navigate(`/course/${course.id}`)}
+                    className="hover:bg-zinc-50/80 transition-colors group cursor-pointer"
                   >
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="px-2 py-1 bg-zinc-100 rounded text-xs font-bold text-zinc-600 uppercase tracking-wider">
+                    <td className="px-6 py-6">
+                      <Link to={`/course/${course.id}`} className="text-emerald-600 font-bold hover:underline">
                         {course.code}
+                      </Link>
+                    </td>
+                    <td className="px-6 py-6">
+                      <div className="font-bold text-zinc-900 group-hover:text-emerald-700 transition-colors">{course.name}</div>
+                      <div className="text-xs text-zinc-400 mt-0.5">{course.department_name}</div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <div className={`inline-flex items-center justify-center w-12 h-10 rounded-xl font-bold text-sm shadow-sm ${getRatingColor(course.avg_difficulty)}`}>
+                        {course.avg_difficulty ? course.avg_difficulty.toFixed(1) : "—"}
                       </div>
-                      <div className="text-xs text-zinc-400 font-medium">
-                        Level {course.level} • {course.credit_hours} Credit Hours
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold text-zinc-900 mb-2 group-hover:text-emerald-600 transition-colors flex items-center gap-2">
-                      {course.name}
-                      {course.recommend_percent && course.recommend_percent >= 80 && (
-                        <span className="px-1.5 py-0.5 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded uppercase border border-emerald-100">Top</span>
-                      )}
-                    </h3>
-                    <p className="text-xs text-zinc-400 mb-4 line-clamp-1">
-                      {course.faculty_name} • {course.department_name}
-                    </p>
-                    <div className="flex items-center justify-between text-sm text-zinc-500 pt-4 border-t border-zinc-100">
-                      <div className="flex items-center gap-1">
-                        <Star size={14} className={course.review_count > 0 ? "text-yellow-500 fill-yellow-500" : "text-zinc-300"} />
-                        <span className="font-semibold text-zinc-700">
-                          {course.avg_difficulty ? (5 - course.avg_difficulty + 1).toFixed(1) : "N/A"}
-                        </span>
-                        <span className="text-xs">({course.review_count} reviews)</span>
-                      </div>
-                      <ChevronRight size={18} className="text-zinc-300 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </Link>
-                ))}
-                {filteredCourses.length === 0 && (
-                  <div className="col-span-full py-20 text-center">
-                    <div className="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center text-zinc-400 mx-auto mb-4">
-                      <BookOpen size={32} />
-                    </div>
-                    <h3 className="text-zinc-900 font-bold text-lg">No courses found</h3>
-                    <p className="text-zinc-500">Try adjusting your search query.</p>
-                  </div>
-                )}
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      {course.recommend_percent !== null ? (
+                        <div className="flex flex-col items-center">
+                          <span className="text-sm font-bold text-zinc-900">{Math.round(course.recommend_percent)}%</span>
+                          <div className="w-12 h-1 bg-zinc-100 rounded-full mt-1 overflow-hidden">
+                            <div 
+                              className="h-full bg-emerald-500" 
+                              style={{ width: `${course.recommend_percent}%` }}
+                            />
+                          </div>
+                        </div>
+                      ) : "—"}
+                    </td>
+                    <td className="px-6 py-6 text-center text-sm font-medium text-zinc-500">
+                      {course.review_count}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          
+          {filteredCourses.length === 0 && (
+            <div className="py-24 text-center">
+              <div className="w-20 h-20 bg-zinc-50 rounded-full flex items-center justify-center text-zinc-300 mx-auto mb-6">
+                <BookOpen size={40} />
               </div>
-            </div>
-          ) : (
-            <div className="h-full flex flex-col items-center justify-center text-center py-20 bg-zinc-50 rounded-3xl border-2 border-dashed border-zinc-200">
-              <div className="w-20 h-20 bg-white rounded-3xl shadow-sm flex items-center justify-center text-zinc-300 mb-6">
-                <GraduationCap size={40} />
-              </div>
-              <h3 className="text-xl font-bold text-zinc-900 mb-2">Select a Faculty</h3>
-              <p className="text-zinc-500 max-w-xs">Please select a university and faculty to start exploring courses.</p>
+              <h3 className="text-xl font-bold text-zinc-900">No courses found</h3>
+              <p className="text-zinc-500 italic mt-2">Try adjusting your filters or search query.</p>
             </div>
           )}
         </div>

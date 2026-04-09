@@ -34,6 +34,7 @@ export default function ReviewModal({
   const [examDifficulty, setExamDifficulty] = useState(3);
   const [gradingFairness, setGradingFairness] = useState(3);
   const [attendanceStrictness, setAttendanceStrictness] = useState(3);
+  const [term, setTerm] = useState("Fall");
   const [recommend, setRecommend] = useState<boolean | null>(null);
   const [advice, setAdvice] = useState("");
   const [professorFeedback, setProfessorFeedback] = useState("");
@@ -57,6 +58,7 @@ export default function ReviewModal({
         exam_difficulty: examDifficulty,
         grading_fairness: gradingFairness,
         attendance_strictness: attendanceStrictness,
+        term,
         recommend,
         advice,
         professor_feedback: professorFeedback || null
@@ -124,6 +126,23 @@ export default function ReviewModal({
                 </div>
               )}
               {/* Professor Selection */}
+              {/* Term Selection */}
+              <div className="space-y-3">
+                <label className="text-sm font-bold text-zinc-700 uppercase tracking-widest">When did you take this?</label>
+                <div className="flex gap-4">
+                  {["Fall", "Spring", "Summer"].map(t => (
+                    <button
+                      key={t}
+                      type="button"
+                      onClick={() => setTerm(t)}
+                      className={`flex-1 py-3 rounded-xl border-2 transition-all font-bold ${term === t ? 'bg-emerald-50 border-emerald-500 text-emerald-700' : 'bg-white border-zinc-100 text-zinc-400 hover:border-zinc-200'}`}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {!initialProfessorId && (
                 <div className="space-y-3">
                   <label className="text-sm font-bold text-zinc-700 uppercase tracking-widest">Professor (Optional)</label>
@@ -160,14 +179,12 @@ export default function ReviewModal({
                 </div>
               )}
 
-              {/* Ratings Grid */}
               <div className="grid sm:grid-cols-2 gap-8">
                 {[
-                  { label: "Difficulty", value: difficulty, setter: setDifficulty, desc: "1: Easy, 5: Hard" },
+                  { label: "Easiness", value: 6 - difficulty, setter: (v: number) => setDifficulty(6 - v), desc: "1: Hard, 5: Easy" },
                   { label: "Workload", value: workload, setter: setWorkload, desc: "1: Low, 5: High" },
-                  { label: "Exam Difficulty", value: examDifficulty, setter: setExamDifficulty, desc: "1: Fair, 5: Brutal" },
-                  { label: "Grading Fairness", value: gradingFairness, setter: setGradingFairness, desc: "1: Strict, 5: Generous" },
-                  { label: "Attendance", value: attendanceStrictness, setter: setAttendanceStrictness, desc: "1: Optional, 5: Mandatory" },
+                  { label: "Exams", value: examDifficulty, setter: setExamDifficulty, desc: "1: Easy, 5: Hard" },
+                  { label: "Grading", value: gradingFairness, setter: setGradingFairness, desc: "1: Harsh, 5: Fair" },
                 ].map((rating, i) => (
                   <div key={i} className="space-y-3">
                     <div className="flex justify-between items-end">

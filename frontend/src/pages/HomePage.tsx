@@ -1,43 +1,40 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ChevronRight, Map as MapIcon, Star, Layout, GraduationCap, Search } from "lucide-react";
+import { ChevronRight, Star, GraduationCap, Search, ThumbsUp, MessageSquare, BookOpen } from "lucide-react";
 
 export default function HomePage() {
   return (
     <div className="relative overflow-hidden">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-50 text-emerald-700 border border-emerald-100 mb-6">
-              Now live for Ain Shams University
-            </span>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-zinc-900 mb-6">
-              Plan smarter. <br />
-              <span className="text-emerald-600">Choose better.</span>
+
+            <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight text-zinc-900 mb-8">
+              RateMy<span className="text-emerald-600">Course</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-xl text-zinc-500 mb-10 leading-relaxed">
-              Built by students, for students. Navigate your degree with interactive course trees
-              and course reviews.
+            <p className="max-w-2xl mx-auto text-xl text-zinc-500 mb-12 leading-relaxed font-medium">
+              Join thousands of students sharing their experiences,
+              find the best professors, and choose your courses with confidence.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
-                to="/tree"
-                className="w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-emerald-200 hover:bg-emerald-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+                to="/reviews"
+                className="w-full sm:w-auto px-10 py-5 bg-emerald-600 text-white rounded-2xl font-bold text-xl shadow-2xl shadow-emerald-200 hover:bg-emerald-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
               >
-                <Layout size={20} />
-                Open Interactive Tree
+                <Search size={22} />
+                Find a Course
               </Link>
               <Link
                 to="/reviews"
-                className="w-full sm:w-auto px-8 py-4 bg-white text-zinc-900 border border-zinc-200 rounded-xl font-bold text-lg hover:bg-zinc-50 hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-10 py-5 bg-white text-zinc-900 border-2 border-zinc-100 rounded-2xl font-bold text-xl hover:bg-zinc-50 hover:-translate-y-1 transition-all flex items-center justify-center gap-3 shadow-lg shadow-zinc-100"
               >
-                <Star size={20} className="text-yellow-500" />
-                Explore Reviews
+                <Star size={22} className="text-yellow-500 fill-yellow-500" />
+                Write a Review
               </Link>
             </div>
           </motion.div>
@@ -45,108 +42,94 @@ export default function HomePage() {
 
         {/* Abstract Background Elements */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-          <div className="absolute top-20 left-10 w-64 h-64 bg-emerald-100/50 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
+          <div className="absolute top-20 left-10 w-64 h-64 bg-emerald-100/40 rounded-full blur-3xl opacity-60" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl opacity-60" />
+        </div>
+      </section>
+
+      {/* Stats/Social Proof */}
+      <section className="py-20 bg-emerald-900 text-white overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+            {[
+              { label: "Active Users", val: "5,000+" },
+              { label: "Course Reviews", val: "12,000+" },
+              { label: "Professors", val: "800+" },
+              { label: "Departments", val: "45+" }
+            ].map((s, i) => (
+              <div key={i}>
+                <div className="text-4xl font-black mb-2">{s.val}</div>
+                <div className="text-emerald-300 font-bold uppercase tracking-widest text-xs">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 bg-white border-y border-zinc-100">
+      <section className="py-32 bg-white border-y border-zinc-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <div className="inline-flex p-3 bg-emerald-50 rounded-2xl text-emerald-600">
-                <Layout size={32} />
-              </div>
-              <h2 className="text-4xl font-bold tracking-tight text-zinc-900">
-                Visualize Your <br /> Academic Journey
-              </h2>
-              <p className="text-lg text-zinc-500 leading-relaxed">
-                No more static PDFs. Our interactive vertical course tree lets you drag nodes between levels,
-                visualize prerequisites, and track your progress in real-time.
-                See exactly what you need to take next.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Visual prerequisite mapping",
-                  "Drag-and-drop planning",
-                  "Status tracking (Completed, In Progress)",
-                  "Custom layout saving"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-zinc-700 font-medium">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
-                      <ChevronRight size={14} />
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl font-black text-zinc-900 mb-4 uppercase tracking-tight">Why RateMyCourse?</h2>
+            <div className="h-1.5 w-24 bg-emerald-600 mx-auto rounded-full" />
+          </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative aspect-square bg-zinc-50 rounded-3xl border border-zinc-200 overflow-hidden shadow-2xl"
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* Mock Tree UI */}
-                <div className="w-4/5 space-y-4">
-                  <div className="p-4 bg-white rounded-xl border border-zinc-200 shadow-sm flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-emerald-500 rounded-lg" />
-                      <div>
-                        <div className="h-3 w-24 bg-zinc-200 rounded mb-2" />
-                        <div className="h-2 w-16 bg-zinc-100 rounded" />
-                      </div>
-                    </div>
-                    <div className="w-6 h-6 rounded-full border-2 border-emerald-500" />
-                  </div>
-                  <div className="ml-12 p-4 bg-white rounded-xl border border-zinc-200 shadow-sm flex items-center justify-between opacity-50">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-zinc-300 rounded-lg" />
-                      <div>
-                        <div className="h-3 w-24 bg-zinc-200 rounded mb-2" />
-                        <div className="h-2 w-16 bg-zinc-100 rounded" />
-                      </div>
-                    </div>
-                    <div className="w-6 h-6 rounded-full border-2 border-zinc-200" />
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-10 bg-zinc-50 rounded-[40px] border border-zinc-100 hover:border-emerald-200 transition-all group">
+              <div className="w-16 h-16 bg-white rounded-3xl shadow-sm flex items-center justify-center text-emerald-600 mb-8 group-hover:scale-110 transition-transform">
+                <ThumbsUp size={32} />
               </div>
-            </motion.div>
+              <h3 className="text-2xl font-bold text-zinc-900 mb-4">Unbiased Insights</h3>
+              <p className="text-zinc-500 leading-relaxed font-medium">
+                Get real feedback from students who actually took the course. Learn about the difficulty, workload, and grading style.
+              </p>
+            </div>
+
+            <div className="p-10 bg-zinc-50 rounded-[40px] border border-zinc-100 hover:border-emerald-200 transition-all group">
+              <div className="w-16 h-16 bg-white rounded-3xl shadow-sm flex items-center justify-center text-emerald-600 mb-8 group-hover:scale-110 transition-transform">
+                <MessageSquare size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-zinc-900 mb-4">Professor Reviews</h3>
+              <p className="text-zinc-500 leading-relaxed font-medium">
+                Find out which professors explain well and who is fair in exams. Our professor-specific feedback is second to none.
+              </p>
+            </div>
+
+            <div className="p-10 bg-zinc-50 rounded-[40px] border border-zinc-100 hover:border-emerald-200 transition-all group">
+              <div className="w-16 h-16 bg-white rounded-3xl shadow-sm flex items-center justify-center text-emerald-600 mb-8 group-hover:scale-110 transition-transform">
+                <BookOpen size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-zinc-900 mb-4">Plan Your Semester</h3>
+              <p className="text-zinc-500 leading-relaxed font-medium">
+                See course metrics like Interest and Usefulness at a glance to build a schedule that you'll actually enjoy.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* University Selection */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-zinc-900 mb-4">Supported Universities</h2>
-          <p className="text-zinc-500">We're starting with the top faculties in Egypt.</p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link to="/reviews" className="p-8 bg-white border border-zinc-200 rounded-2xl hover:border-emerald-500 transition-all hover:shadow-lg cursor-pointer group">
-            <div className="w-12 h-12 bg-zinc-100 rounded-xl flex items-center justify-center text-zinc-600 mb-6 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors">
-              <GraduationCap size={24} />
-            </div>
-            <h3 className="text-xl font-bold text-zinc-900 mb-2">Ain Shams University</h3>
-            <p className="text-zinc-500 text-sm mb-4">Faculty of Engineering</p>
-            <div className="flex items-center gap-2 text-emerald-600 font-semibold text-sm">
-              Explore Reviews <ChevronRight size={16} />
-            </div>
-          </Link>
-
-          <div className="p-8 bg-zinc-50 border border-dashed border-zinc-300 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
-            <h3 className="text-lg font-bold text-zinc-400 mb-2">More Universities</h3>
-            <p className="text-zinc-400 text-sm italic">Coming Soon</p>
+      {/* Supported University */}
+      <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-zinc-900 rounded-[50px] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Starting with the best.</h2>
+            <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto">
+              We are currently focused on providing the most detailed course data for Ain Shams University.
+            </p>
+            <Link to="/reviews" className="inline-flex items-center gap-4 p-8 bg-zinc-800 border border-zinc-700 rounded-3xl hover:border-emerald-500 transition-all group">
+              <div className="w-12 h-12 bg-zinc-700 rounded-2xl flex items-center justify-center text-white group-hover:bg-emerald-600 transition-colors">
+                <GraduationCap size={24} />
+              </div>
+              <div className="text-left">
+                <h3 className="text-xl font-bold text-white">Ain Shams University</h3>
+                <p className="text-zinc-500 text-sm">Faculty of Engineering</p>
+              </div>
+              <ChevronRight size={24} className="text-zinc-600 group-hover:text-emerald-500 transition-colors ml-4" />
+            </Link>
           </div>
+
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl" />
         </div>
       </section>
     </div>

@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { motion } from "motion/react";
+
 import { Star, Mail, Lock, User, AlertCircle, Eye, EyeOff, CheckCircle2 } from "lucide-react";
 import { supabase } from "../lib/supabase";
 
@@ -58,7 +58,7 @@ export default function RegisterPage() {
   if (success) {
     return (
       <div className="min-h-[calc(100vh-64px)] flex items-center justify-center px-4 py-16">
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="max-w-md w-full text-center bg-white p-12 rounded-3xl border border-zinc-200 shadow-2xl shadow-zinc-200/50">
+        <div className="max-w-md w-full text-center bg-white p-12 rounded-3xl border border-zinc-200 shadow-2xl shadow-zinc-200/50 animate-in zoom-in duration-300">
           <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 size={36} className="text-emerald-600" />
           </div>
@@ -69,19 +69,14 @@ export default function RegisterPage() {
           <Link to="/login" className="inline-block px-8 py-3 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200">
             Go to Sign In
           </Link>
-        </motion.div>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="min-h-[calc(100vh-64px)] flex items-center justify-center px-4 py-16 bg-gradient-to-br from-zinc-50 via-white to-emerald-50/30">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-md w-full"
-      >
+      <div className="max-w-md w-full animate-in fade-in slide-in-from-bottom-4 duration-300">
         <div className="bg-white rounded-3xl border border-zinc-200 shadow-2xl shadow-zinc-200/50 overflow-hidden">
           {/* Header */}
           <div className="bg-zinc-900 px-10 py-10 text-center relative overflow-hidden">
@@ -165,7 +160,7 @@ export default function RegisterPage() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

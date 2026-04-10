@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Search, BookOpen, ChevronRight, Star, GraduationCap, Filter } from "lucide-react";
-import { motion } from "motion/react";
+
 import { supabase } from "../lib/supabase";
 
 interface University {

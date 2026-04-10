@@ -1,6 +1,6 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { motion } from "motion/react";
+
 import { Star, Mail, Lock, AlertCircle, Eye, EyeOff } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import { useAuth } from "../App";
@@ -51,12 +51,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-[calc(100vh-64px)] flex items-center justify-center px-4 py-16 bg-gradient-to-br from-zinc-50 via-white to-emerald-50/30">
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-md w-full"
-      >
+      <div className="max-w-md w-full animate-in fade-in slide-in-from-bottom-4 duration-300">
         <div className="bg-white rounded-3xl border border-zinc-200 shadow-2xl shadow-zinc-200/50 overflow-hidden">
           {/* Header */}
           <div className="bg-zinc-900 px-10 py-10 text-center relative overflow-hidden">
@@ -89,7 +84,7 @@ export default function LoginPage() {
               id="google-sign-in-btn"
               onClick={handleGoogleSignIn}
               disabled={googleLoading}
-              className="w-full flex items-center justify-center gap-3 py-3.5 px-6 bg-white border-2 border-zinc-200 rounded-2xl font-bold text-zinc-800 hover:border-emerald-500 hover:bg-emerald-50/30 transition-all shadow-sm mb-5 disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-3 py-3.5 px-6 bg-white border-2 border-zinc-200 rounded-2xl font-bold text-zinc-800 hover:border-emerald-500 hover:bg-emerald-50/30 shadow-sm mb-5 disabled:opacity-50"
             >
               <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -153,7 +148,7 @@ export default function LoginPage() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

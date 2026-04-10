@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
 import { useState, useEffect, createContext, useContext } from "react";
-import { motion, AnimatePresence } from "motion/react";
+
 import {
   BookOpen,
   Star,
@@ -115,49 +115,41 @@ const Navbar = ({ onOpenProfile }: { onOpenProfile: () => void }) => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.1 }}
-            className="md:hidden bg-white border-t border-zinc-100 overflow-hidden"
-          >
-            <div className="px-4 py-6 space-y-4">
-              <Link to="/reviews" onClick={() => setIsOpen(false)} className="block text-lg font-medium text-zinc-900">Course Reviews</Link>
-              {user?.role === "admin" && (
-                <Link to="/admin" onClick={() => setIsOpen(false)} className="block text-lg font-bold text-emerald-600">Admin Dashboard</Link>
-              )}
-              {user ? (
-                <div className="pt-4 border-t border-zinc-100">
-                  <button
-                    onClick={() => { onOpenProfile(); setIsOpen(false); }}
-                    className="flex items-center gap-3 mb-4 w-full text-left"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600">
-                      <User size={20} />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-zinc-900">{user.name}</div>
-                      <div className="text-xs text-zinc-500">{user.email}</div>
-                    </div>
-                  </button>
-                  <button
-                    onClick={() => { logout(); setIsOpen(false); }}
-                    className="flex items-center gap-2 text-red-500 font-medium"
-                  >
-                    <LogOut size={18} />
-                    Sign Out
-                  </button>
-                </div>
-              ) : (
-                <Link to="/login" onClick={() => setIsOpen(false)} className="block w-full text-center py-3 bg-zinc-900 text-white rounded-xl">Sign In</Link>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-zinc-100 overflow-hidden animate-in slide-in-from-top-2 duration-200">
+          <div className="px-4 py-6 space-y-4">
+            <Link to="/reviews" onClick={() => setIsOpen(false)} className="block text-lg font-medium text-zinc-900">Course Reviews</Link>
+            {user?.role === "admin" && (
+              <Link to="/admin" onClick={() => setIsOpen(false)} className="block text-lg font-bold text-emerald-600">Admin Dashboard</Link>
+            )}
+            {user ? (
+              <div className="pt-4 border-t border-zinc-100">
+                <button
+                  onClick={() => { onOpenProfile(); setIsOpen(false); }}
+                  className="flex items-center gap-3 mb-4 w-full text-left"
+                >
+                  <div className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600">
+                    <User size={20} />
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-zinc-900">{user.name}</div>
+                    <div className="text-xs text-zinc-500">{user.email}</div>
+                  </div>
+                </button>
+                <button
+                  onClick={() => { logout(); setIsOpen(false); }}
+                  className="flex items-center gap-2 text-red-500 font-medium"
+                >
+                  <LogOut size={18} />
+                  Sign Out
+                </button>
+              </div>
+            ) : (
+              <Link to="/login" onClick={() => setIsOpen(false)} className="block w-full text-center py-3 bg-zinc-900 text-white rounded-xl">Sign In</Link>
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
@@ -200,22 +192,15 @@ const ProfilePanel = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
   if (!user) return null;
 
   return (
-    <AnimatePresence>
+    <>
       {isOpen && (
         <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+          <div
+            className="fixed inset-0 bg-black/20 z-40"
             onClick={onClose}
           />
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.15 }}
-            className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl z-50 overflow-y-auto"
+          <div
+            className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl z-50 overflow-y-auto animate-in slide-in-from-right duration-200"
           >
             <div className="p-8">
               <div className="flex justify-between items-center mb-8">
@@ -275,10 +260,10 @@ const ProfilePanel = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
                 <LogOut size={18} /> Sign Out
               </button>
             </div>
-          </motion.div>
+          </div>
         </>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 

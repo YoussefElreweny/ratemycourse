@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+
 import { Mail, Phone, MapPin, Send, MessageSquare, Globe } from "lucide-react";
 import { useState, FormEvent } from "react";
 
@@ -14,10 +14,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-zinc-50 pt-20 pb-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 mb-6">
               Get in <span className="text-emerald-600">touch.</span>
             </h1>
@@ -26,16 +23,12 @@ export default function ContactPage() {
               Or maybe you have an idea to make CourseMap even better? 
               We'd love to hear from you!
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="bg-white p-8 md:p-10 rounded-3xl border border-zinc-200 shadow-sm">
           {submitted ? (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="text-center py-16"
-            >
+            <div className="text-center py-16 animate-in zoom-in duration-300">
               <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mx-auto mb-6">
                 <Send size={40} />
               </div>
@@ -49,7 +42,7 @@ export default function ContactPage() {
               >
                 Send Another Message
               </button>
-            </motion.div>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">

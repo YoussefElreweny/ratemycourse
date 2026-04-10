@@ -11,7 +11,7 @@ import {
   Panel
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { motion } from "motion/react";
+
 import { 
   CheckCircle2, 
   Clock, 
@@ -658,10 +658,8 @@ export default function TreePage() {
           <Controls />
           
           <Panel position="top-left" className="bg-white rounded-2xl border border-zinc-200 shadow-xl flex transition-all duration-300 relative">
-            <motion.div 
-              initial={false}
-              animate={{ width: isPanelOpen ? '320px' : '0px', opacity: isPanelOpen ? 1 : 0 }}
-              className="overflow-hidden"
+            <div 
+              className={`overflow-hidden transition-all duration-300 ${isPanelOpen ? 'w-[320px] opacity-100' : 'w-0 opacity-0'}`}
             >
               <div className="p-4 w-[320px] space-y-4">
                 <div className="space-y-3">
@@ -757,7 +755,7 @@ export default function TreePage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
             
             {/* Toggle Button - Smaller and floating on the edge */}
             <button 
@@ -783,11 +781,8 @@ export default function TreePage() {
 
       {/* Course Detail Side Panel */}
       {selectedCourseId && (
-        <motion.div 
-          initial={{ x: '100%' }}
-          animate={{ x: 0 }}
-          exit={{ x: '100%' }}
-          className="absolute top-0 right-0 w-full sm:w-80 h-full bg-white border-l border-zinc-200 shadow-2xl z-[60] flex flex-col"
+        <div 
+          className="absolute top-0 right-0 w-full sm:w-80 h-full bg-white border-l border-zinc-200 shadow-2xl z-[60] flex flex-col animate-in slide-in-from-right duration-300"
         >
           <div className="p-6 flex justify-between items-center border-b border-zinc-100">
             <h3 className="font-bold text-zinc-900">Course Details</h3>
@@ -882,7 +877,7 @@ export default function TreePage() {
               </div>
             )}
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   );

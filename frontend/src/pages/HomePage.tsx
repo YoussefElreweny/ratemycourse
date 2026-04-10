@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+
 import { Link } from "react-router-dom";
 import { ChevronRight, Star, GraduationCap, Search, ThumbsUp, MessageSquare, BookOpen } from "lucide-react";
 
@@ -8,11 +8,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
 
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-zinc-900 mb-6 sm:mb-8">
               RateMy<span className="text-emerald-600">Course</span>
@@ -37,7 +33,7 @@ export default function HomePage() {
                 Write a Review
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Abstract Background Elements */}

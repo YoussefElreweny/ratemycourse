@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { Sparkles, Loader2, MessageSquareQuote } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+
 
 interface CourseSummaryProps {
   courseName: string;
@@ -58,25 +58,13 @@ export default function CourseSummary({ courseName, reviews }: CourseSummaryProp
         )}
       </div>
 
-      <AnimatePresence mode="wait">
         {loading ? (
-          <motion.div 
-            key="loading"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="py-12 flex flex-col items-center justify-center gap-4 text-zinc-400"
-          >
+          <div className="py-12 flex flex-col items-center justify-center gap-4 text-zinc-400">
             <Loader2 className="animate-spin" size={32} />
             <p className="text-sm font-medium">Analyzing {reviews.length} reviews...</p>
-          </motion.div>
+          </div>
         ) : summary ? (
-          <motion.div 
-            key="summary"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="space-y-4"
-          >
+          <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
             <div className="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 relative">
               <MessageSquareQuote className="absolute -top-3 -left-3 text-emerald-200" size={32} />
               <div className="text-zinc-700 text-sm leading-relaxed whitespace-pre-wrap">
@@ -89,7 +77,7 @@ export default function CourseSummary({ courseName, reviews }: CourseSummaryProp
             >
               Regenerate
             </button>
-          </motion.div>
+          </div>
         ) : (
           <div className="py-8 text-center bg-zinc-50 rounded-2xl border border-dashed border-zinc-200">
             <p className="text-sm text-zinc-500">
@@ -99,7 +87,6 @@ export default function CourseSummary({ courseName, reviews }: CourseSummaryProp
             </p>
           </div>
         )}
-      </AnimatePresence>
     </div>
   );
 }

@@ -30,7 +30,7 @@ export default function RegisterPage() {
 
       if (signUpError) throw signUpError;
 
-      // Step 2: Insert profile into public users table (trigger will also handle this, but we do it explicitly too)
+      // Step 2: Insert profile into public users table
       if (data.user) {
         const role = email === "y.reweny@gmail.com" ? "admin" : "student";
         await supabase.from("users").upsert({
@@ -39,6 +39,12 @@ export default function RegisterPage() {
           name,
           role,
         }, { onConflict: "id" });
+      }
+
+      // If email confirmation is disabled, Supabase returns a session immediately
+      if (data.session) {
+        navigate("/", { replace: true });
+        return;
       }
 
       setSuccess(true);
@@ -58,7 +64,7 @@ export default function RegisterPage() {
           </div>
           <h2 className="text-2xl font-bold text-zinc-900 mb-2">Account Created!</h2>
           <p className="text-zinc-500 mb-8">
-            Check your email to confirm your account, then sign in.
+            Your account is ready. Click below to sign in.
           </p>
           <Link to="/login" className="inline-block px-8 py-3 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-200">
             Go to Sign In

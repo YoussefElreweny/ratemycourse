@@ -1,107 +1,55 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion } from "motion/react";
-import { Star, Users, BookOpen, ChevronRight, MessageSquare, ThumbsUp, ThumbsDown, Filter, Plus } from "lucide-react";
+import { Star, BookOpen, ChevronRight, MessageSquare, Plus, User } from "lucide-react";
 import ReviewModal from "../components/ReviewModal";
 import { useAuth } from "../App";
-
-interface Professor {
-  id: number;
-  name: string;
-  avg_difficulty: number | null;
-  avg_workload: number | null;
-  recommend_percent: number | null;
-  review_count: number;
-  latest_feedback: string | null;
-}
-
-interface Course {
-  id: number;
-  code: string;
-  name: string;
-  credit_hours: number;
-  department_name: string;
-  faculty_name: string;
-  professors: Professor[];
-}
 
 export default function CourseDetailPage() {
   const { id } = useParams();
   const { user } = useAuth();
-  const [course, setCourse] = useState<Course | null>(null);
+  const [course, setCourse] = useState<any>(null);
   const [reviews, setReviews] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sortBy, setSortBy] = useState<"rating" | "difficulty" | "recommend">("rating");
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
 
   const fetchData = async () => {
     const { supabase } = await import("../lib/supabase");
-    
     try {
       const { data: cData, error: cError } = await supabase
-        .from('courses')
-        .select('*')
-        .eq('id', id)
+        .from("courses")
+        .select("*")
+        .eq("id", id)
         .single();
-        
       if (cError) throw cError;
 
       const { data: bData } = await supabase
-        .from('program_courses')
-        .select('departments(name, faculties(name))')
-        .eq('course_id', id)
+        .from("program_courses")
+        .select("departments(name, faculties(name))")
+        .eq("course_id", id)
         .limit(1);
 
-      const { data: rData } = await supabase
-        .from('reviews')
-        .select('*, users(name), professors(name)')
-        .eq('course_id', id)
-        .order('created_at', { ascending: false });
+      // Fetch reviews — use professor_name text field now
+      const { data: rData, error: rErr } = await supabase
+        .from("reviews")
+        .select("*, users(name)")
+        .eq("course_id", id)
+        .order("created_at", { ascending: false });
 
-      const { data: prefData } = await supabase
-        .from('course_professors')
-        .select('professors(id, name)')
-        .eq('course_id', id);
+      if (rErr) console.error("Reviews fetch error:", rErr);
 
       const formattedReviews = rData?.map(r => ({
         ...r,
-        user_name: r.users?.name || 'Anonymous',
-        professor_name: r.professors?.name || null
+        user_name: r.users?.name || "Anonymous",
       })) || [];
-
-      const processedProfessors = prefData?.map((cp: any) => {
-        const p = cp.professors;
-        const profReviews = formattedReviews.filter(r => r.professor_id === p.id);
-        
-        const revCount = profReviews.length;
-        const avgDiff = revCount ? profReviews.reduce((a, r) => a + r.difficulty, 0) / revCount : null;
-        const avgWork = revCount ? profReviews.reduce((a, r) => a + r.workload, 0) / revCount : null;
-        const recCount = profReviews.filter(r => r.recommend).length;
-        const recPercent = revCount ? (recCount / revCount) * 100 : null;
-        
-        const latestFeedback = profReviews.find(r => r.professor_feedback)?.professor_feedback || null;
-
-        return {
-          id: p.id,
-          name: p.name,
-          avg_difficulty: avgDiff,
-          avg_workload: avgWork,
-          recommend_percent: recPercent,
-          review_count: revCount,
-          latest_feedback: latestFeedback
-        };
-      }) || [];
 
       const dep = bData && bData.length > 0 ? (bData[0].departments as any) : null;
 
-      const formattedCourse = cData ? {
+      setCourse({
         ...cData,
-        department_name: dep?.name || 'Common Course',
-        faculty_name: dep?.faculties?.name || 'Faculty of Engineering',
-        professors: processedProfessors
-      } : null;
+        department_name: dep?.name || "Common Course",
+        faculty_name: dep?.faculties?.name || "Faculty of Engineering",
+      });
 
-      setCourse(formattedCourse);
       setReviews(formattedReviews);
     } catch (e) {
       console.error(e);
@@ -110,201 +58,197 @@ export default function CourseDetailPage() {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [id]);
+  useEffect(() => { fetchData(); }, [id]);
 
-  const sortedProfessors = useMemo(() => {
-    if (!course) return [];
-    return [...course.professors].sort((a, b) => {
-      if (sortBy === "rating") {
-        return (b.recommend_percent || 0) - (a.recommend_percent || 0);
-      }
-      if (sortBy === "difficulty") {
-        return (a.avg_difficulty || 0) - (b.avg_difficulty || 0);
-      }
-      if (sortBy === "recommend") {
-        return (b.recommend_percent || 0) - (a.recommend_percent || 0);
-      }
-      return 0;
-    });
-  }, [course, sortBy]);
+  const reviewCount = reviews.length;
+  const avgDifficulty = reviewCount > 0
+    ? reviews.reduce((a, r) => a + r.difficulty, 0) / reviewCount
+    : null;
+  const avgWorkload = reviewCount > 0
+    ? reviews.reduce((a, r) => a + r.workload, 0) / reviewCount
+    : null;
+  const avgExams = reviewCount > 0
+    ? reviews.reduce((a, r) => a + r.exam_difficulty, 0) / reviewCount
+    : null;
+  const avgGrading = reviewCount > 0
+    ? reviews.reduce((a, r) => a + r.grading_fairness, 0) / reviewCount
+    : null;
+  const recommendPct = reviewCount > 0
+    ? (reviews.filter(r => r.recommend).length / reviewCount) * 100
+    : null;
 
-  if (loading) return <div className="p-20 text-center">Loading course...</div>;
-  if (!course) return <div className="p-20 text-center">Course not found.</div>;
+  const getDifficultyColor = (val: number) => {
+    if (val <= 2) return "text-emerald-600";
+    if (val <= 3) return "text-amber-600";
+    return "text-red-600";
+  };
+
+  if (loading) return <div className="p-20 text-center text-zinc-400">Loading course...</div>;
+  if (!course) return <div className="p-20 text-center text-zinc-400">Course not found.</div>;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-12"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <Link to="/reviews" className="text-emerald-600 font-bold text-sm hover:underline">Course Reviews</Link>
-          <ChevronRight size={14} className="text-zinc-400" />
-          <span className="text-zinc-400 text-sm">{course.code}</span>
-        </div>
-        <h1 className="text-4xl font-bold text-zinc-900 mb-2">{course.name}</h1>
-        <div className="flex items-center gap-6 text-zinc-500">
-          <div className="flex items-center gap-2">
-            <BookOpen size={18} />
+    <div className="max-w-6xl mx-auto px-4 py-8 sm:py-12">
+      {/* Breadcrumb */}
+      <div className="flex items-center gap-2 mb-6 text-sm">
+        <Link to="/reviews" className="text-emerald-600 font-bold hover:underline">Course Reviews</Link>
+        <ChevronRight size={14} className="text-zinc-400" />
+        <span className="text-zinc-400">{course.code}</span>
+      </div>
+
+      {/* Course Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-3">{course.name}</h1>
+        <div className="flex flex-wrap items-center gap-3 text-zinc-500 text-sm">
+          <div className="flex items-center gap-1.5">
+            <BookOpen size={16} />
             <span>{course.credit_hours} Credit Hours</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Users size={18} />
-            <span>{course.professors.length} Professors</span>
-          </div>
-          <div className="text-sm font-medium px-2 py-0.5 bg-zinc-100 rounded text-zinc-600">
-            {course.faculty_name}
-          </div>
+          <span className="px-2.5 py-1 bg-zinc-100 rounded-lg text-zinc-600 font-medium text-xs">{course.faculty_name}</span>
+          <span className="px-2.5 py-1 bg-zinc-100 rounded-lg text-zinc-600 font-medium text-xs">{course.code}</span>
         </div>
-      </motion.div>
+      </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="md:col-span-2 space-y-8">
-          <section className="bg-white p-8 rounded-3xl border border-zinc-200 shadow-sm">
-            <h2 className="text-xl font-bold text-zinc-900 mb-6">Course Overview</h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-4 bg-zinc-50 rounded-2xl">
-                <div className="text-zinc-500 text-[10px] font-bold uppercase mb-1">Easiness</div>
-                <div className="text-2xl font-bold text-zinc-900">
-                  {course.professors.length > 0 && course.professors.some(p => p.avg_difficulty !== null)
-                    ? (6 - (course.professors.reduce((acc, p) => acc + (p.avg_difficulty || 0), 0) / course.professors.filter(p => p.avg_difficulty !== null).length)).toFixed(1)
-                    : "N/A"}
-                </div>
-              </div>
-              <div className="p-4 bg-zinc-50 rounded-2xl col-span-2 lg:col-span-2">
-                <div className="text-zinc-500 text-[10px] font-bold uppercase mb-1">Recommend</div>
-                <div className="text-2xl font-bold text-zinc-900">
-                  {course.professors.length > 0 && course.professors.some(p => p.recommend_percent !== null)
-                    ? (course.professors.reduce((acc, p) => acc + (p.recommend_percent || 0), 0) / course.professors.filter(p => p.recommend_percent !== null).length).toFixed(0) + "%"
-                    : "N/A"}
-                </div>
-              </div>
+      {/* Stats Overview */}
+      <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-10">
+        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-zinc-200 shadow-sm text-center">
+          <div className="text-2xl font-bold text-zinc-900">{reviewCount}</div>
+          <div className="text-xs text-zinc-400 font-medium uppercase tracking-wide mt-1">Reviews</div>
+        </div>
+        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-zinc-200 shadow-sm text-center">
+          <div className={`text-2xl font-bold ${avgDifficulty ? getDifficultyColor(avgDifficulty) : "text-zinc-900"}`}>
+            {avgDifficulty !== null ? avgDifficulty.toFixed(1) : "—"}
+          </div>
+          <div className="text-xs text-zinc-400 font-medium uppercase tracking-wide mt-1">Difficulty</div>
+        </div>
+        <div className="bg-white p-4 sm:p-5 rounded-2xl border border-zinc-200 shadow-sm text-center">
+          <div className="text-2xl font-bold text-zinc-900">{recommendPct !== null ? Math.round(recommendPct) + "%" : "—"}</div>
+          <div className="text-xs text-zinc-400 font-medium uppercase tracking-wide mt-1">Recommend</div>
+        </div>
+      </div>
+
+      {/* Two-column layout: Reviews left, Write a Review sidebar right */}
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Reviews */}
+        <section className="flex-1 min-w-0">
+          <h2 className="text-xl font-bold text-zinc-900 mb-5">Student Reviews ({reviewCount})</h2>
+
+          {reviewCount === 0 ? (
+            <div className="py-16 text-center bg-zinc-50 rounded-2xl border-2 border-dashed border-zinc-200">
+              <Star size={32} className="mx-auto mb-3 text-zinc-300" />
+              <p className="text-zinc-500 font-medium">No reviews yet for this course.</p>
+              <p className="text-zinc-400 text-sm mt-1">Be the first to share your experience!</p>
             </div>
-          </section>
-
-          <section>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <h2 className="text-2xl font-bold text-zinc-900">Student Reviews ({reviews.length})</h2>
-            </div>
-
-            <div className="space-y-6">
-              {reviews.map((review, i) => (
-                <motion.div 
+          ) : (
+            <div className="space-y-4">
+              {reviews.map((review) => (
+                <div
                   key={review.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-white p-8 rounded-3xl border border-zinc-200 shadow-sm hover:border-emerald-500 transition-all"
+                  className="bg-white p-5 sm:p-6 rounded-2xl border border-zinc-200 shadow-sm hover:border-zinc-300 transition-colors"
                 >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-zinc-100 rounded-full flex items-center justify-center text-zinc-600 text-xs font-bold border border-zinc-200">
-                        {review.user_name ? review.user_name.split(' ').map((n: string) => n[0]).join('') : "?"}
+                  {/* Review Header */}
+                  <div className="flex justify-between items-start mb-4 gap-3">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-9 h-9 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-700 text-xs font-bold border border-emerald-100 shrink-0">
+                        {review.user_name ? review.user_name.split(" ").map((n: string) => n[0]).join("").slice(0,2) : "?"}
                       </div>
-                      <div>
-                        <div className="text-sm font-bold text-zinc-900 mb-0.5">
-                          {review.user_name}
-                        </div>
+                      <div className="min-w-0">
+                        <div className="text-sm font-bold text-zinc-900 truncate">{review.user_name}</div>
                         <div className="text-[10px] text-zinc-400 font-medium uppercase tracking-wider">
-                          {review.term} • {new Date(review.created_at).toLocaleDateString()}
+                          {review.term && `${review.term} • `}{new Date(review.created_at).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}
                         </div>
                       </div>
                     </div>
-                    <div className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest ${review.recommend ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' : 'bg-red-50 text-red-700 border border-red-100'}`}>
-                      {review.recommend ? 'Recommended' : 'Not Recommended'}
-                    </div>
+                    <span className={`shrink-0 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide ${review.recommend ? "bg-emerald-50 text-emerald-700 border border-emerald-100" : "bg-red-50 text-red-700 border border-red-100"}`}>
+                      {review.recommend ? "Recommended" : "Not Rec."}
+                    </span>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-                    <div className="text-center p-3 bg-zinc-50 rounded-2xl">
-                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Easiness</div>
-                      <div className="font-bold text-zinc-900">{6 - review.difficulty}/5</div>
+                  {/* Professor Name Badge — colored for contrast */}
+                  {review.professor_name && (
+                    <div className="mb-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-violet-50 border border-violet-100 rounded-lg">
+                      <User size={12} className="text-violet-500" />
+                      <span className="text-xs font-bold text-violet-700">Prof. {review.professor_name}</span>
                     </div>
-                    <div className="text-center p-3 bg-zinc-50 rounded-2xl col-span-1">
-                      <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">Workload</div>
-                      <div className="font-bold text-zinc-900">{review.workload}/5</div>
-                    </div>
+                  )}
+
+                  {/* Ratings */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-4">
+                    {[
+                      { label: "Difficulty", val: review.difficulty },
+                      { label: "Workload", val: review.workload },
+                      { label: "Exams", val: review.exam_difficulty },
+                      { label: "Grading", val: review.grading_fairness },
+                    ].map(({ label, val }) => (
+                      <div key={label} className="text-center p-2.5 bg-zinc-50 rounded-xl">
+                        <div className="text-[10px] font-bold text-zinc-400 uppercase mb-1">{label}</div>
+                        <div className="font-bold text-zinc-900 text-sm">{val ?? "—"}/5</div>
+                      </div>
+                    ))}
                   </div>
 
-                  <div className="bg-zinc-50 p-6 rounded-2xl italic text-zinc-700 text-sm leading-relaxed relative mb-4">
-                    <MessageSquare className="absolute -top-2 -left-2 text-emerald-200" size={24} />
+                  {/* Advice */}
+                  <div className="bg-zinc-50 px-4 py-3 rounded-xl text-zinc-700 text-sm leading-relaxed italic">
+                    <MessageSquare size={14} className="inline text-emerald-400 mr-1.5 mb-0.5" />
                     "{review.advice}"
                   </div>
 
+                  {/* Professor Feedback */}
                   {review.professor_feedback && (
-                    <div className="p-4 bg-amber-50 border border-amber-100 rounded-2xl">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="text-[10px] font-bold text-amber-600 uppercase tracking-widest">Professor Insight</div>
-                        {review.professor_name && (
-                          <div className="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md">
-                            Prof. {review.professor_name}
-                          </div>
-                        )}
-                      </div>
+                    <div className="mt-3 p-3 bg-amber-50 border border-amber-100 rounded-xl">
+                      <div className="text-[10px] font-bold text-amber-600 uppercase tracking-widest mb-1">Professor Insight</div>
                       <p className="text-sm text-amber-900 leading-relaxed">{review.professor_feedback}</p>
                     </div>
                   )}
-                </motion.div>
-              ))}
-
-              {reviews.length === 0 && (
-                <div className="py-20 text-center bg-zinc-50 rounded-3xl border-2 border-dashed border-zinc-200">
-                  <p className="text-zinc-500">No reviews found for this course yet.</p>
                 </div>
-              )}
+              ))}
             </div>
-          </section>
-        </div>
+          )}
+        </section>
 
-        <div className="space-y-6">
-          <div className="bg-emerald-600 p-8 rounded-3xl text-white shadow-xl shadow-emerald-200">
-            <h3 className="text-lg font-bold mb-2">Contribute Insight</h3>
-            <p className="text-emerald-100 text-sm mb-6">Help your fellow students make better choices by sharing your experience.</p>
-            <button 
-              onClick={() => setIsReviewModalOpen(true)}
-              className="w-full py-3 bg-white text-emerald-600 rounded-xl font-bold hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2"
-            >
-              <Plus size={18} /> Write a Review
-            </button>
-          </div>
-
-          <ReviewModal 
-            isOpen={isReviewModalOpen}
-            onClose={() => setIsReviewModalOpen(false)}
-            courseId={course.id}
-            courseName={course.name}
-            professors={course.professors}
-            onSuccess={fetchData}
-          />
-
-          <section className="bg-white p-6 rounded-3xl border border-zinc-200">
-            <div className="mb-6">
-              <h2 className="font-bold text-zinc-900">Professors</h2>
+        {/* Write a Review Sidebar */}
+        <aside className="w-full lg:w-72 shrink-0">
+          <div className="lg:sticky lg:top-24 space-y-4">
+            <div className="bg-emerald-600 p-6 rounded-2xl text-white">
+              <h3 className="font-bold text-lg mb-2">Taken this course?</h3>
+              <p className="text-emerald-100 text-sm mb-5 leading-relaxed">Share your experience and help fellow students make better choices.</p>
+              <button
+                onClick={() => user ? setIsReviewModalOpen(true) : alert("Please sign in to write a review.")}
+                className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-white text-emerald-600 rounded-xl font-bold hover:bg-emerald-50 transition-colors text-sm"
+              >
+                <Plus size={16} /> Write a Review
+              </button>
             </div>
 
-            <div className="space-y-3">
-              {sortedProfessors.map(prof => (
-                <div
-                  key={prof.id}
-                  className="p-4 bg-zinc-50 border border-zinc-100 rounded-2xl transition-all"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-zinc-600 text-xs font-bold border border-zinc-100 shadow-sm">
-                      {prof.name.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-bold text-zinc-900 truncate max-w-[140px]">{prof.name}</h3>
-                    </div>
+            {/* Quick Stats sidebar */}
+            {reviewCount > 0 && (
+              <div className="bg-white p-5 rounded-2xl border border-zinc-200 shadow-sm space-y-3">
+                <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-widest">Quick Stats</h4>
+                {[
+                  { label: "Avg Difficulty", value: avgDifficulty ? `${avgDifficulty.toFixed(1)}/5` : "—" },
+                  { label: "Avg Workload", value: avgWorkload ? `${avgWorkload.toFixed(1)}/5` : "—" },
+                  { label: "Avg Exams", value: avgExams ? `${avgExams.toFixed(1)}/5` : "—" },
+                  { label: "Avg Grading", value: avgGrading ? `${avgGrading.toFixed(1)}/5` : "—" },
+                  { label: "Recommend", value: recommendPct !== null ? `${Math.round(recommendPct)}%` : "—" },
+                  { label: "Total Reviews", value: reviewCount },
+                ].map(s => (
+                  <div key={s.label} className="flex justify-between items-center py-2 border-b border-zinc-50 last:border-0">
+                    <span className="text-xs text-zinc-500">{s.label}</span>
+                    <span className="text-sm font-bold text-zinc-900">{s.value}</span>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </aside>
       </div>
+
+      <ReviewModal
+        isOpen={isReviewModalOpen}
+        onClose={() => setIsReviewModalOpen(false)}
+        courseId={course.id}
+        courseName={course.name}
+        onSuccess={fetchData}
+      />
     </div>
   );
 }

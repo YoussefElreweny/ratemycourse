@@ -2,17 +2,30 @@ import React from "react";
 import { BrowserRouter, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
 import { useState, useEffect, createContext, useContext } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { 
-  BookOpen, 
-  Star, 
-  User, 
-  CheckCircle2, 
-  Clock, 
-  Layout, 
+import {
+  BookOpen,
+  Star,
+  User,
+  CheckCircle2,
+  Clock,
+  Layout,
   LogOut,
   Menu,
   X,
-  GraduationCap
+  GraduationCap,
+  BookIcon,
+  BookA,
+  BookMarked,
+  BookOpenText,
+  BookOpenIcon,
+  BookUp,
+  BookUp2,
+  BookUp2Icon,
+  LucideBookAudio,
+  BookPlusIcon,
+  LucideBookImage,
+  BookAlert,
+  Book
 } from "lucide-react";
 import { supabase } from "./lib/supabase";
 import type { Session } from "@supabase/supabase-js";
@@ -59,7 +72,7 @@ const Navbar = ({ onOpenProfile }: { onOpenProfile: () => void }) => {
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-200 group-hover:scale-105 transition-transform">
-              <Star size={24} />
+              <Book size={24} />
             </div>
             <div>
               <span className="text-xl font-bold tracking-tight text-zinc-900">RateMyCourse</span>
@@ -75,7 +88,7 @@ const Navbar = ({ onOpenProfile }: { onOpenProfile: () => void }) => {
             )}
             {user ? (
               <div className="flex items-center gap-4 pl-4 border-l border-zinc-200">
-                <button 
+                <button
                   onClick={onOpenProfile}
                   className="flex items-center gap-2 hover:bg-zinc-50 px-3 py-1.5 rounded-xl transition-colors"
                 >
@@ -104,10 +117,11 @@ const Navbar = ({ onOpenProfile }: { onOpenProfile: () => void }) => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.1 }}
             className="md:hidden bg-white border-t border-zinc-100 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-4">
@@ -117,7 +131,7 @@ const Navbar = ({ onOpenProfile }: { onOpenProfile: () => void }) => {
               )}
               {user ? (
                 <div className="pt-4 border-t border-zinc-100">
-                  <button 
+                  <button
                     onClick={() => { onOpenProfile(); setIsOpen(false); }}
                     className="flex items-center gap-3 mb-4 w-full text-left"
                   >
@@ -129,8 +143,8 @@ const Navbar = ({ onOpenProfile }: { onOpenProfile: () => void }) => {
                       <div className="text-xs text-zinc-500">{user.email}</div>
                     </div>
                   </button>
-                  <button 
-                    onClick={() => { logout(); setIsOpen(false); }} 
+                  <button
+                    onClick={() => { logout(); setIsOpen(false); }}
                     className="flex items-center gap-2 text-red-500 font-medium"
                   >
                     <LogOut size={18} />
@@ -189,18 +203,18 @@ const ProfilePanel = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
     <AnimatePresence>
       {isOpen && (
         <>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
             onClick={onClose}
           />
-          <motion.div 
+          <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            transition={{ duration: 0.15 }}
             className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl z-50 overflow-y-auto"
           >
             <div className="p-8">
@@ -226,7 +240,7 @@ const ProfilePanel = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
 
               <div className="grid grid-cols-3 gap-4 mb-8">
                 {[
-                  { label: "Reviews", value: stats.reviews, icon: Star, color: "text-amber-500 bg-amber-50" },
+                  { label: "Reviews", value: stats.reviews, icon: Book, color: "text-amber-500 bg-amber-50" },
                   { label: "Completed", value: stats.completed, icon: CheckCircle2, color: "text-emerald-600 bg-emerald-50" },
                   { label: "In Progress", value: stats.inProgress, icon: Clock, color: "text-blue-600 bg-blue-50" },
                 ].map(({ label, value, icon: Icon, color }) => (
@@ -254,7 +268,7 @@ const ProfilePanel = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => voi
                 </div>
               </div>
 
-              <button 
+              <button
                 onClick={() => { logout(); onClose(); }}
                 className="w-full py-3 flex items-center justify-center gap-2 text-red-500 hover:bg-red-50 rounded-2xl font-bold transition-colors border border-red-100"
               >
@@ -283,12 +297,9 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-  // Clean the /#hash URL after Google OAuth redirect
-  useEffect(() => {
-    if (window.location.hash && window.location.hash.includes("access_token")) {
-      window.history.replaceState(null, "", "/");
-    }
-  }, []);
+  // NOTE: Do NOT manually clean the URL hash here.
+  // Supabase's onAuthStateChange handles parsing the OAuth token from the fragment.
+  // Wiping the hash before Supabase reads it would break Google sign-in silently.
 
   useEffect(() => {
     // Set user immediately from session — don't block on DB
@@ -323,8 +334,8 @@ export default function App() {
             // First time: insert profile
             supabase.from("users").upsert(
               [{ id: su.id, email, name, role }],
-              { onConflict: "email" }
-            ).then(() => {});
+              { onConflict: "id" }
+            ).then(() => { });
           }
         });
     };
@@ -366,13 +377,13 @@ export default function App() {
               <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
             </Routes>
           </main>
-          
+
           <footer className="bg-white border-t border-zinc-200 py-12 mt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-zinc-200 rounded-lg flex items-center justify-center text-zinc-600">
-                    <Star size={18} />
+                    <Book size={18} />
                   </div>
                   <span className="font-bold text-zinc-900">RateMyCourse</span>
                 </div>

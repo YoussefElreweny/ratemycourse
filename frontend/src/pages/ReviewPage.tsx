@@ -269,7 +269,7 @@ export default function ReviewPage() {
       {/* Course Table */}
       <div className="bg-white rounded-3xl shadow-xl shadow-zinc-200/50 border border-zinc-100 overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left">
+          <table className="w-full text-left min-w-[580px]">
             <thead>
               <tr className="border-b border-zinc-100 bg-zinc-50/50">
                 <th className="px-6 py-5 text-sm font-bold text-zinc-500 uppercase tracking-widest">Code</th>

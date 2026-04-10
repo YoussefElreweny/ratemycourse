@@ -10,7 +10,8 @@ import {
   Shield,
   AlertCircle,
   RefreshCw,
-  Filter
+  Filter,
+  Mail
 } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import { useAuth } from "../App";
@@ -46,6 +47,14 @@ interface AppUser {
   role: string;
 }
 
+interface ContactMessage {
+  id: number;
+  name: string;
+  email: string;
+  message: string;
+  created_at: string;
+}
+
 interface Department {
   id: number;
   name: string;
@@ -61,17 +70,18 @@ const levels = [
 export default function AdminDashboard() {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState<"reviews" | "courses" | "users">("reviews");
+  const [activeTab, setActiveTab] = useState<"reviews" | "courses" | "users" | "messages">("reviews");
 
   const [reviews, setReviews] = useState<Review[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
   const [users, setUsers] = useState<AppUser[]>([]);
+  const [messages, setMessages] = useState<ContactMessage[]>([]);
   const [departments, setDepartments] = useState<Department[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedDept, setSelectedDept] = useState<number | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<number | null>(null);
-  const [stats, setStats] = useState({ totalCourses: 0, totalUsers: 0, totalReviews: 0 });
+  const [stats, setStats] = useState({ totalCourses: 0, totalUsers: 0, totalReviews: 0, totalMessages: 0 });
 
   useEffect(() => {
     if (user?.role !== "admin") { navigate("/"); return; }
@@ -143,10 +153,21 @@ export default function AdminDashboard() {
         .select("id, email, name, role")
         .order("role");
 
-      if (userErr) console.error("Users fetch error:", userErr);
       if (userData) {
         setUsers(userData);
         setStats(prev => ({ ...prev, totalUsers: userData.length }));
+      }
+
+      // Contact Messages
+      const { data: contactData, error: contactErr } = await supabase
+        .from("contact_messages")
+        .select("*")
+        .order("created_at", { ascending: false });
+      
+      if (contactErr) console.error("Contact messages fetch error:", contactErr);
+      if (contactData) {
+        setMessages(contactData);
+        setStats(prev => ({ ...prev, totalMessages: contactData.length }));
       }
     } catch (e) {
       console.error("Admin data fetch error:", e);
@@ -187,6 +208,15 @@ export default function AdminDashboard() {
     if (!error) setUsers(prev => prev.map(u => u.id === userId ? { ...u, role: newRole } : u));
   };
 
+  const deleteMessage = async (id: number) => {
+    if (!confirm("Delete this message?")) return;
+    const { error } = await supabase.from("contact_messages").delete().eq("id", id);
+    if (!error) {
+      setMessages(prev => prev.filter(m => m.id !== id));
+      setStats(prev => ({ ...prev, totalMessages: prev.totalMessages - 1 }));
+    } else { alert("Failed to delete message."); }
+  };
+
   // Filtered data
   const filteredReviews = reviews.filter(r =>
     r.course_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -207,10 +237,17 @@ export default function AdminDashboard() {
     u.email.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const filteredMessages = messages.filter(m =>
+    m.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    m.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    m.message.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const tabs = [
     { id: "reviews", label: "Reviews", count: reviews.length, icon: MessageSquare },
     { id: "courses", label: "Courses", count: courses.length, icon: BookOpen },
     { id: "users", label: "Users", count: users.length, icon: Users },
+    { id: "messages", label: "Messages", count: messages.length, icon: Mail },
   ];
 
   return (
@@ -243,6 +280,7 @@ export default function AdminDashboard() {
             { label: "Courses", value: stats.totalCourses, icon: BookOpen, color: "bg-blue-50 text-blue-600" },
             { label: "Reviews", value: stats.totalReviews, icon: Star, color: "bg-amber-50 text-amber-600" },
             { label: "Users", value: stats.totalUsers, icon: Users, color: "bg-emerald-50 text-emerald-600" },
+            { label: "Messages", value: stats.totalMessages, icon: Mail, color: "bg-purple-50 text-purple-600" },
           ].map((stat) => (
             <div key={stat.label} className="bg-white p-4 sm:p-6 rounded-2xl border border-zinc-200 shadow-sm flex items-center gap-3 sm:gap-4">
               <div className={`${stat.color} w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0`}>
@@ -457,6 +495,44 @@ export default function AdminDashboard() {
                             </button>
                           </>
                         )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Messages Tab */}
+              {activeTab === "messages" && (
+                <div className="divide-y divide-zinc-100">
+                  {filteredMessages.length === 0 ? (
+                    <div className="p-20 text-center text-zinc-400">
+                      <Mail size={40} className="mx-auto mb-4 opacity-50" />
+                      <p>No messages found.</p>
+                    </div>
+                  ) : filteredMessages.map((m) => (
+                    <div key={m.id} className="p-4 sm:p-6 hover:bg-zinc-50 transition-colors">
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-wrap items-center gap-2 mb-2">
+                            <span className="font-bold text-zinc-900 text-sm">{m.name}</span>
+                            <span className="text-zinc-400 text-xs px-2 py-0.5 bg-zinc-100 rounded-lg">{m.email}</span>
+                            <span className="text-zinc-400 text-[10px] ml-auto">
+                              {new Date(m.created_at).toLocaleDateString("en-GB", { 
+                                year: "numeric", month: "short", day: "numeric",
+                                hour: "2-digit", minute: "2-digit"
+                              })}
+                            </span>
+                          </div>
+                          <div className="bg-zinc-50 border border-zinc-100 p-4 rounded-2xl text-zinc-700 text-sm leading-relaxed whitespace-pre-wrap">
+                            {m.message}
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => deleteMessage(m.id)}
+                          className="flex items-center gap-1.5 px-3 py-2 text-red-500 hover:bg-red-50 rounded-xl text-sm font-bold transition-all shrink-0 self-start mt-2 sm:mt-0"
+                        >
+                          <Trash2 size={15} /> Delete
+                        </button>
                       </div>
                     </div>
                   ))}

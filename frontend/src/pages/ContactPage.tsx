@@ -1,13 +1,37 @@
 
 import { Mail, Phone, MapPin, Send, MessageSquare, Globe } from "lucide-react";
 import { useState, FormEvent } from "react";
+import { supabase } from "../lib/supabase";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const message = formData.get("message") as string;
+
+    try {
+      const { error: submitError } = await supabase
+        .from("contact_messages")
+        .insert([{ name, email, message }]);
+
+      if (submitError) throw submitError;
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setError("Failed to send message. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -20,7 +44,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-lg text-zinc-500 leading-relaxed">
               Have you spotted a bug? Want to see your university added? 
-              Or maybe you have an idea to make CourseMap even better? 
+              Or maybe you have an idea to make RateMyCourse even better? 
               We'd love to hear from you!
             </p>
           </div>
@@ -50,6 +74,7 @@ export default function ContactPage() {
                   <label className="text-sm font-bold text-zinc-700 uppercase tracking-widest">Name</label>
                   <input 
                     required
+                    name="name"
                     type="text" 
                     placeholder="Your name"
                     className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all"
@@ -59,6 +84,7 @@ export default function ContactPage() {
                   <label className="text-sm font-bold text-zinc-700 uppercase tracking-widest">Email</label>
                   <input 
                     required
+                    name="email"
                     type="email" 
                     placeholder="your@email.com"
                     className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all"
@@ -70,18 +96,32 @@ export default function ContactPage() {
                 <label className="text-sm font-bold text-zinc-700 uppercase tracking-widest">How can we help?</label>
                 <textarea 
                   required
+                  name="message"
                   rows={5}
                   placeholder="Tell us about a bug, a new university, or your ideas..."
                   className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 outline-none transition-all resize-none"
                 ></textarea>
               </div>
 
+              {error && (
+                <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm font-medium border border-red-100 mb-6">
+                  {error}
+                </div>
+              )}
+
               <button 
                 type="submit"
-                className="w-full py-4 bg-emerald-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-emerald-100 hover:bg-emerald-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+                disabled={loading}
+                className="w-full py-4 bg-emerald-600 text-white rounded-xl font-bold text-lg shadow-xl shadow-emerald-100 hover:bg-emerald-700 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:translate-y-0"
               >
-                <Send size={20} />
-                Send Message
+                {loading ? (
+                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  <>
+                    <Send size={20} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           )}

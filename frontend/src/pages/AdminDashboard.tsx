@@ -94,14 +94,14 @@ export default function AdminDashboard() {
       // Reviews
       const { data: reviewData, error: revErr } = await supabase
         .from("reviews")
-        .select(`id, advice, difficulty, recommend, term, created_at, users(name), courses(code, name)`)
+        .select(`id, advice, difficulty, recommend, term, created_at, is_anonymous, users(name), courses(code, name)`)
         .order("created_at", { ascending: false });
 
       if (revErr) console.error("Reviews fetch error:", revErr);
       if (reviewData) {
         const mapped = reviewData.map((r: any) => ({
           id: r.id,
-          user_name: r.users?.name || "Anonymous",
+          user_name: r.is_anonymous ? "Anonymous" : (r.users?.name || "Anonymous"),
           course_code: r.courses?.code || "N/A",
           course_name: r.courses?.name || "Unknown",
           advice: r.advice || "",

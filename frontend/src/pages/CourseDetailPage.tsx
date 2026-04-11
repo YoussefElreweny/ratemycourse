@@ -39,7 +39,7 @@ export default function CourseDetailPage() {
 
       const formattedReviews = rData?.map(r => ({
         ...r,
-        user_name: r.users?.name || "Anonymous",
+        user_name: r.is_anonymous ? "Anonymous" : (r.users?.name || "Anonymous"),
       })) || [];
 
       const dep = bData && bData.length > 0 ? (bData[0].departments as any) : null;

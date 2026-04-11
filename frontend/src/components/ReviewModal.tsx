@@ -30,6 +30,7 @@ export default function ReviewModal({
   const [recommend, setRecommend] = useState<boolean | null>(null);
   const [advice, setAdvice] = useState("");
   const [professorFeedback, setProfessorFeedback] = useState("");
+  const [isAnonymous, setIsAnonymous] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
@@ -52,7 +53,8 @@ export default function ReviewModal({
         term,
         recommend,
         advice,
-        professor_feedback: professorFeedback || null
+        professor_feedback: professorFeedback || null,
+        is_anonymous: isAnonymous
       }]);
 
       if (!error) {
@@ -67,6 +69,7 @@ export default function ReviewModal({
         setRecommend(null);
         setAdvice("");
         setProfessorFeedback("");
+        setIsAnonymous(false);
       } else {
         console.error(error);
         alert("Failed to submit review.");
@@ -102,6 +105,20 @@ export default function ReviewModal({
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 space-y-6 max-h-[70vh] overflow-y-auto">
+          {/* Post Anonymously Toggle */}
+          <div className="flex items-center gap-3 p-4 bg-zinc-50 border border-zinc-200 rounded-xl">
+            <input
+              type="checkbox"
+              id="isAnonymous"
+              checked={isAnonymous}
+              onChange={(e) => setIsAnonymous(e.target.checked)}
+              className="w-5 h-5 accent-emerald-600 rounded cursor-pointer"
+            />
+            <label htmlFor="isAnonymous" className="text-sm font-medium text-zinc-700 cursor-pointer select-none">
+              Post anonymously <span className="text-zinc-400 font-normal">(hide my name from this review)</span>
+            </label>
+          </div>
+
           {/* Course Selection */}
           {!initialCourseId && (
             <div className="space-y-2">
